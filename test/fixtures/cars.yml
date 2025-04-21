@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_model: MyString
+  price: 9.99
+  miles: 1
+  car_make: MyString
+  link: MyString
+
+two:
+  car_model: MyString
+  price: 9.99
+  miles: 1
+  car_make: MyString
+  link: MyString
