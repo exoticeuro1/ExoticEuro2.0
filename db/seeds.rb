@@ -19,7 +19,7 @@
     youtube: "https://www.youtube.com/user/torim",
     facebook: "https://www.facebook.com/torim",
     instagram: "https://www.instagram.com/torim",
-    plicy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
+    policy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
 )
 
 puts "Admin user created"

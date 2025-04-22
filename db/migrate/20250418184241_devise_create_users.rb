@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.string :youtube
       t.string :facebook
       t.string :instagram
-      t.text :plicy
+      t.text :policy
 
       t.timestamps null: false
     end

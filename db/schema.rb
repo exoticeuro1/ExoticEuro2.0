@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_18_193220) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
   create_table "cars", force: :cascade do |t|
     t.string "car_model"
     t.decimal "price"
@@ -20,6 +20,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_18_193220) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.text "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "car_id", null: false
+    t.index ["car_id"], name: "index_images_on_car_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,10 +44,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_18_193220) do
     t.string "youtube"
     t.string "facebook"
     t.string "instagram"
-    t.text "plicy"
+    t.text "policy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "images", "cars"
 end
