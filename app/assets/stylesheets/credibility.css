@@ -1,0 +1,254 @@
+.credibility-section{
+    width: 95%;
+    margin-top: 50px;
+    color: white;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+.testimony-section {
+    width: 80%;
+    margin: 32px auto;
+    color: #fff;
+    position: relative;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.testimony-outer {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+    position: absolute; /* back to absolute so overlapping works */
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Prevent clicks on hidden ones */
+}
+  
+.testimony-outer.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+  
+/* ------------------------------------------------------------------ */
+
+.testimony {
+    width: 100%;
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+    gap: 10px;  
+    padding: 10px;
+}
+
+.testimony-image {
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    border-radius: 50%;
+    flex-shrink: 0; 
+    background-image: url("icon.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.testimony-text{
+    text-align: left;
+}
+
+.testimony h3{
+    font-size: 1rem;
+    margin-bottom: 0; 
+    padding-bottom: 0; 
+}
+
+.testimony a{
+    font-size: 1.4rem;
+    margin-top: 0; 
+    padding-top: 0; 
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+.before-carousel, .after-carousel{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.before-car-slide, .after-car-slide{
+    width: 100%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 204px;
+    mask-image: linear-gradient(
+        to right ,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+    );
+}
+
+.car-dmg, .car-fix {
+    width: 300px;
+    height: 200px;
+    border-radius: 14px;
+    border: 2px solid #004172;
+    position: absolute;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.car-dmg{
+    left: 100%;
+    animation-name: scrollLeft;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.car-fix{
+    right: 100%;
+    animation-name: scrollRight;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} 
+
+@keyframes scrollLeft {
+    to{
+        left: -300px;
+    }        
+}
+
+@keyframes scrollRight {
+    to{
+        right: -300px;
+    }
+}
+
+
+.car1{
+    background-image: url("car1_damaged.jpg");
+    animation-delay: calc(20s / 5 * (5 - 1) * -1);
+}
+
+.car2{
+    background-image: url("car2_damaged.jpg");
+    animation-delay: calc(20s / 5 * (5 - 2) * -1);
+}
+
+.car3{
+    background-image: url("car3_damaged.jpg");
+    animation-delay: calc(20s / 5 * (5 - 3) * -1);
+}
+
+.car4{
+    background-image: url("car4_damaged.jpg");
+    animation-delay: calc(20s / 5 * (5 - 4) * -1);
+}
+
+.car5{
+    background-image: url("car5_damaged.jpg");
+    animation-delay: calc(20s / 5 * (5 - 5) * -1);
+}
+
+/*  After carousel*/
+.car1-mirror{
+    background-image: url("car1_fixed.jpg");
+    animation-delay: calc(20s / 5 * (5 - 1) * -1);
+}
+
+.car2-mirror{
+    background-image: url("car2_fixed.jpg");
+    animation-delay: calc(20s / 5 * (5 - 2) * -1);
+}
+
+.car3-mirror{
+    background-image: url("car3_fixed.jpg");
+    animation-delay: calc(20s / 5 * (5 - 3) * -1);
+}
+
+.car4-mirror{
+    background-image: url("car4_fixed.jpg");
+    animation-delay: calc(20s / 5 * (5 - 4) * -1);
+}
+
+.car5-mirror{
+    background-image: url("car5_fixed.jpg");
+    animation-delay: calc(20s / 5 * (5 - 5) * -1);
+}
+
+
+
+
+
+/* Media Queries to Adjust Left Dynamically */
+
+
+@media (max-width: 1300px) {
+.car-dmg {
+    left: 120%;
+}
+.car-fix {
+    right: 120%;
+}
+}
+
+
+
+@media (max-width: 1250px) {
+.car-dmg {
+    left: 150%;
+}
+.car-fix {
+    right: 150%;
+}
+}
+
+@media (max-width: 992px) {
+.car-dmg {
+    left: 200%;
+}
+.car-fix {
+    right: 200%;
+}
+}
+
+@media (max-width: 768px) {
+.car-dmg {
+    left: 250%;
+}
+.car-fix {
+    right: 250%;
+}
+}
+
+@media (max-width: 576px) {
+.car-dmg {
+    left: 300%;
+}
+.car-fix {
+    right: 300%;
+}
+}
+
+@media (max-width: 420px) {
+.car-dmg {
+    left: 400%;
+}
+.car-fix {
+    right: 400%;
+}
+}

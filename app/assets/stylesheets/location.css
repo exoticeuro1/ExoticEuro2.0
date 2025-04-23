@@ -1,0 +1,66 @@
+.contact-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    align-items: center;
+    color: white;
+}
+
+
+
+.contact-card{
+    color: white;
+    width: 40%;
+    height: 400px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #7195B5;
+
+}
+
+.contact-card h2{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contact-content{
+    font-size: 1.5rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-side{
+    width: 50%;
+    height: auto;
+    text-align: left;
+    padding: 20px;;
+}
+
+.contact-info{
+    line-height: 10px;
+    padding-bottom: 10px;
+}
+
+.work-hours{
+    margin-top: 30px;
+}
+
+.location-map{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    background-image: url("map.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}

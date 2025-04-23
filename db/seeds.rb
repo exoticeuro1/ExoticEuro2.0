@@ -12,15 +12,16 @@
 @admin = User.create!(
     email: "tori@gmail.com",
     password: "password",
+    display_email: "eurodealz@gmail.com",
     name: "Tori",
     bio: "I repair cars",
     phone: "1234567890",
-    location: "New York",
     youtube: "https://www.youtube.com/user/torim",
     facebook: "https://www.facebook.com/torim",
     instagram: "https://www.instagram.com/torim",
     policy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
 )
+puts "Created admin with email: #{@admin.display_email}"
 
 puts "Admin user created"
 
@@ -41,4 +42,4 @@ image = Image.create!(
   
 )
 
-puts "Image Created: #{Image.count}"  
+puts "Hero Banner Image: #{Image.count}"  

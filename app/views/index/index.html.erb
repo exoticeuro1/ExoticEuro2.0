@@ -1,5 +1,6 @@
-
-    <header>
+<div class="page">
+    <%#-------------------------------------------- Header section --------------------------------------------%>
+    <header style="background-image: url('<%= Image.find(1).url %>');">
         <div class="top">
             <h1>Exotic Euro</h1>
         </div>
@@ -8,45 +9,157 @@
             <a>Just for You.</a>
         </div>
     </header>
+    <%#--------------------------------------------------------------------------------------------------------%>
 
-<style>
-header {
-    width: 100%;
-    height: 100vh;
-    background-image: url("<%= @landing_image.url %>");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: "Baskerville", serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* <- This spaces top and bottom */
-    align-items: center;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    z-index: 20;
-}
+    <div class="gradient-overlay"></div>
 
-header .top h1 {
-    font-size: 12rem;
-    margin-top: 100px;
-    padding: 0;
-}
+    <%#-------------------------------------------- Steps section ---------------------------------------------%>
 
-header .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    gap: 0.5rem; /* Space between the two links */
-}
+    <div class = "step-by-step">
+        <div class = "section-header">
+            <h1>Step by Step Process</h1>
+            <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
+        </div>
+        <div class = "step">
+            <div class = "step-text">
+                <p>We discuss the the model of your car, and we discuss the initial budget.</p>
+            </div>
+        </div>
+        <div class = "step">
+            <div class = "step-text">
+                <p>Our Specialists would find and inspect the requested car to determine the cost of repairs. </p>
+            </div>
+        </div>
+        <div class = "step">
+            <div class = "step-text">
+                <p>Our Mechanics would repair the car to factory specs. </p>
+            </div>
+        </div>
+        <div class = "step">
+            <div class = "step-text">
+                <p>Our Team delivers the your dream car for the agreed budget. </p>
+            </div>
+        </div>
 
-header .bottom a {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: white;
-}
-</style>
+        <div class = "book-btn">
+            <a>Book Consoltation</a>
+        </div>
+    </div>
+
+    <%#--------------------------------------------------------------------------------------------------------%>
+
+
+    <%#-------------------------------------------- Contact section ---------------------------------------------%>
+    <div class = "contact-section">
+        <div class = "section-header">
+            <h1> Where to Find Us</h1>
+            <a>Stop by, give us a call, or send a message — we're here to help.</a>
+        </div>
+
+        <% if @user.location.present? %>
+            <%= render partial: 'index/contact/contact_card_with_location', locals: { location: @user.location } %>
+        <% else %>
+           <%=  render partial: 'index/contact/contact_card', locals: { location: @user.location }%>
+        <% end %>
+    </div>
+
+    <%#--------------------------------------------------------------------------------------------------------%>
+
+
+
+    <%#--------------------------------------------- Credibility Section -------------------------------------%>
+        <div class = "credibility-section">
+            <div class = "section-header">
+                <h1> What our clients say</h1>
+                <a> We are proud of our work and our clients.</a>
+            </div>
+           
+            
+            <div class="before-carousel">
+                <div class="before-car-slide" >
+                    <div class="car-dmg car1"></div>
+                    <div class="car-dmg car2"></div>
+                    <div class="car-dmg car3"></div>
+                    <div class="car-dmg car4"></div>
+                    <div class="car-dmg car5"></div>
+                </div>
+            </div>
+            
+            <div class="testimony-section">
+                <div class="testimony-outer active">
+                    <%= render partial: 'index/testimonies/testimony_1' %>
+                </div>
+                <div class="testimony-outer">
+                    <%= render partial: 'index/testimonies/testimony_2' %>
+                </div>
+                <div class="testimony-outer">
+                    <%= render partial: 'index/testimonies/testimony_3' %>
+                </div>
+                <div class="testimony-outer">
+                    <%= render partial: 'index/testimonies/testimony_4' %>
+                </div>
+            </div>
+
+          
+            
+            <div class="after-carousel">
+                <div class="after-car-slide">
+                    <div class="car-fix car1-mirror"></div>
+                    <div class="car-fix car2-mirror"></div>
+                    <div class="car-fix car3-mirror"></div>
+                    <div class="car-fix car4-mirror"></div>
+                    <div class="car-fix car5-mirror"></div>
+                </div>
+            </div>
+        </div>
+
+    <%#--------------------------------------------------------------------------------------------------------%>
+
+    <%#-------------------------------------------- Featured section ---------------------------------------------%>
+    <div class = "featured-section">
+            <div class = "section-header" > 
+                <h1> Ready-to-Go Deals </h1>
+                <a> Check out our collection of existing ehicles.</a>
+            </div>
+
+            <h2> Featured:</h2>
+            
+            <div class = "featured-car">
+                <div class = "text-gradiant"></div>
+
+                <div class = "featured-text-content">
+                    <h2>2023 BMW M3</h2>
+                    <div class = "featured-details">
+                        <p>$70,000</p>
+                        <div class = "featured-details-cta">
+                            <a>Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                
+            <div class = "view-featured">
+                <a>View More</a>
+            </div>
+    </div>
+
+        <%#--------------------------------------------------------------------------------------------------------%>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonials = document.querySelectorAll(".testimony-outer");
+    if (testimonials.length === 0) return; // Prevent error if selector is wrong
+
+    let index = 0;
+
+    setInterval(() => {
+      testimonials[index].classList.remove("active");
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add("active");
+    }, 3000);
+  });
+</script>
+
+

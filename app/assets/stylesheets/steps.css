@@ -1,0 +1,62 @@
+.step-by-step {
+    color: #fff;
+    height: auto;
+    width: 60%;
+    margin: 20px auto;
+    margin-top: 20px;
+}
+
+.step {
+    background-color: #004172;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    display: flex;
+    align-items: left;
+}
+
+.step-text {
+position: relative;
+color: #fff;
+padding-left: 50px;
+text-align: left;
+font-size: 2rem;
+font-weight: bold;
+}
+
+.step-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 100%;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+
+.book-btn {
+    background-color: #000;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #e9e9e9;
+    margin: 20px auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    
+}
+
+.book-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
