@@ -27,7 +27,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "car_id", null: false
+    t.integer "car_id"
     t.index ["car_id"], name: "index_images_on_car_id"
   end
 

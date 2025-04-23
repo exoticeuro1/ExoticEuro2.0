@@ -15,4 +15,14 @@
 #
 
 class Image < ApplicationRecord
+    belongs_to(
+        :car,
+        class_name: "Car",
+        foreign_key: "car_id",
+        inverse_of: :images,
+        optional: true
+    )
+    
+    validates :name, presence: true
+    validates :url, presence: true
 end

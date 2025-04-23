@@ -34,3 +34,11 @@ puts "Admin user created"
 )
 
 puts "Cars Created: #{Car.count}"
+
+image = Image.create!(
+  name: "landing_car",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
+  
+)
+
+puts "Image Created: #{Image.count}"  

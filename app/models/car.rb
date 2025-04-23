@@ -14,4 +14,11 @@
 #
 
 class Car < ApplicationRecord
+    has_many(
+        :images,
+        class_name: "Image",
+        foreign_key: "car_id",
+        inverse_of: :car,
+        dependent: :destroy
+    )
 end
