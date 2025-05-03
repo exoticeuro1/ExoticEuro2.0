@@ -24,5 +24,16 @@
 
   <body>
     <%= yield %>
+    <% flash.each do |key, message| %>
+      <div class="flash-message <%= key %>">
+        <div class="flash-content">
+          <span><%= message %></span>
+          <button class="close-flash" onclick="this.parentElement.parentElement.style.display='none';">&times;</button>
+        </div>
+      </div>
+    <% end %>
+
   </body>
+
+  <%= render partial: 'layouts/footer' %>
 </html>

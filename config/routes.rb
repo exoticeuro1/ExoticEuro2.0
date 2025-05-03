@@ -23,4 +23,15 @@ Rails.application.routes.draw do
   get "/policy", to: "pages#policy", as: "policy"
   # Dashboard
   get "/dashboard", to: "dashboard#page", as: "dashboard"
+  # user
+  patch "/dashboard/update_user", to: "dashboard#update_user", as: "update_user"
+  # cars
+  post "/dashboard/create_car", to: "dashboard#create_car", as: "create_car"
+  
+  get "/dashboard/edit_car/:car_id", to: "dashboard#edit_car", as: "edit_car"
+  patch "/dashboard/update_car", to: "dashboard#update_car", as: "update_car"
+  delete "/dashboard/delete_car", to: "dashboard#delete_car", as: "delete_car"
+  # images
+  post "/dashboard/create_image", to: "dashboard#create_image", as: "create_image"
+  delete "/dashboard/delete_image", to: "dashboard#delete_image", as: "delete_image"
 end
