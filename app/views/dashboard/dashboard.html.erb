@@ -1,0 +1,140 @@
+<h1> DashBoard</h1>
+<p>Welcome to the dashboard!</p>
+<div class='form-card'>
+  <h2> Update User</h2>
+  <%= form_with(url: update_user_path(user_id: @user.id), local: true, method: :patch) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, value: @user.name %>
+    </div>
+    <div>
+      <%= form.label :display_email %>
+      <%= form.text_field :display_email, value: @user.display_email %>
+    </div>
+    <div>
+      <%= form.label :phone %>
+      <%= form.text_field :phone, value: @user.phone %>
+    </div>
+    <div>
+      <%= form.label :bio %>
+      <%= form.text_area :bio, value: @user.bio %>
+    </div>
+    <div>
+      <%= form.label :location %>
+      <%= form.text_field :location, value: @user.location %>
+    </div>
+    <div>
+      <%= form.label :policy %>
+      <%= form.text_area :policy, value: @user.policy %>
+    </div>    
+    <div>
+      <%= form.label :youtube %>
+      <%= form.text_field :youtube, value: @user.youtube %>
+    </div>
+    <div>
+      <%= form.label :facebook %>
+      <%= form.text_field :facebook, value: @user.facebook %>
+    </div>
+    <div>
+      <%= form.label :instagram %>
+      <%= form.text_field :instagram, value: @user.instagram %>
+    </div>
+    
+    <div>
+      <%= form.submit "Update User" %>
+    </div>
+  <% end %>
+</div>
+
+<div class = 'form-card'>
+<h2> Add New Car</h2>
+<%= form_with(url: create_car_path, local: true, html: { multipart: true }) do |form| %>
+  <div>
+    <%= form.label :car_make, "Make" %>
+    <%= form.text_field :car_make %>
+  </div>
+
+  <div>
+    <%= form.label :car_model, "Model" %>
+    <%= form.text_field :car_model %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.label :miles, "Mileage" %>
+    <%= form.number_field :miles %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :link, "External Link" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.label :images, "Upload Car Images" %>
+   <%= file_field_tag "car[image]", accept: "image/*" %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Car" %>
+  </div>
+<% end %>
+</div>
+
+
+
+<% if @cars.present? %>
+    <h2>All Cars</h2>
+<% @cars.each do |car| %>
+  <%= link_to edit_car_path(car_id: car.id), class: "car-link" do %>
+    <% if car.images.any? %>
+      <div class="car-card" style="background-image: url('<%= car.images.first.url %>'); background-size: cover; background-position: center;">
+    <% else %>
+      <div class="car-card" style="background-color: #ccc;">
+    <% end %>
+        <h3><%= car.car_make %> <%= car.car_model %></h3>
+      </div>
+  <% end %>
+<% end %>
+
+  
+<% else %>
+  <h2>No Cars Available</h2>
+<% end %>
+
+<style>
+    .car-card {
+        border: 1px solid #ccc;
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+        background-image: url(car.image.url);
+        overflow: hidden;
+    }
+
+    .car-card h3 {
+        color: black;
+        background: blur(10px);
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 10px;
+        word-wrap: break-word; /* Wrap text to the next line if it's too long */
+        overflow-wrap: break-word; /* Ensure compatibility for wrapping */
+        white-space: normal; /* Allow text to wrap */
+        font-size: clamp(1rem, 2vw, 2rem); /* Scale font size responsively */
+    }
+
+
+</style>
+

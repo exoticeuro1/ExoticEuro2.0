@@ -22,6 +22,7 @@ gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
@@ -54,14 +55,17 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+ 
+
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]s
   gem "capybara"
   gem "selenium-webdriver"
 end
 
 gem "devise"
 
+gem "google-cloud-storage"
 

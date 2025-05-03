@@ -12,16 +12,15 @@
 @admin = User.create!(
     email: "tori@gmail.com",
     password: "password",
+    display_email: "eurodealz@gmail.com",
     name: "Tori",
     bio: "I repair cars",
     phone: "1234567890",
-    location: "New York",
     youtube: "https://www.youtube.com/user/torim",
     facebook: "https://www.facebook.com/torim",
     instagram: "https://www.instagram.com/torim",
-    plicy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
+    policy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
 )
-
 puts "Admin user created"
 
 @car = Car.create!(
@@ -33,4 +32,68 @@ puts "Admin user created"
     link: "https://www.toyota.com/camry/",
 )
 
+@car_image = Image.create!(
+    name: "car_image",
+    url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
+    car_id: @car.id,
+)
 puts "Cars Created: #{Car.count}"
+
+herobanner_image = Image.create!(
+  name: "landing_car",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
+)
+puts "Hero Banner Image: #{Image.count}"  
+
+no_image = Image.create!(
+  name: "no_image",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/no_image.jpg",
+)
+puts "No Image Created"
+
+before_car_one = Image.create!(
+  name: "before_car_one",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_damaged.jpg",
+)
+
+before_car_two = Image.create!(
+  name: "before_car_two",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car2_damaged.jpg",
+)
+
+before_car_three = Image.create!(
+  name: "before_car_three",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car3_damaged.jpg",
+)
+
+before_car_four = Image.create!(
+  name: "before_car_four",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car4_damaged.jpg",
+)
+
+before_car_five = Image.create!(
+  name: "before_car_five",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_damaged.jpg",
+)
+
+after_car_one = Image.create!(
+  name: "after_car_one",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_fixed.jpg",
+)
+after_car_two = Image.create!(
+  name: "after_car_two",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car2_fixed.jpg",
+)
+after_car_three = Image.create!(
+  name: "after_car_three",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car3_fixed.jpg",
+)
+after_car_four = Image.create!(
+  name: "after_car_four",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car4_fixed.jpg",
+)
+after_car_five = Image.create!(
+  name: "after_car_five",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_fixed.jpg",
+)
+puts "Before and After Images Created: #{Image.where.not(id: 1).count}"

@@ -1,0 +1,23 @@
+.car-image {
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,67 @@
+<% if @car.present?%>
+    <h1> Car Details</h1>
+    <a> <%= button_to "Back to Dashboard", dashboard_path, method: :get %></a>
+    <a> <%= button_to "Delete Car", delete_car_path(car_id: @car.id), method: :delete, class: "delete-btn" %></a>
+
+    <div class = "form-card">
+   <%= form_with( url: update_car_path(car_id: @car.id), local: true, method: :patch) do |form| %>
+        <div>
+            <%= form.label :car_make, "Make" %>
+            <%= form.text_field :car_make, value: @car.car_make %>
+        </div>
+
+        <div>
+            <%= form.label :car_model, "Model" %>
+            <%= form.text_field :car_model, value: @car.car_model %>
+        </div>
+
+        <div>
+            <%= form.label :price %>
+            <%= form.number_field :price, step: 0.01, value: @car.price %>
+        </div>
+
+        <div>
+            <%= form.label :miles, "Mileage" %>
+            <%= form.number_field :miles, value: @car.miles %>
+        </div>
+
+        <div>
+            <%= form.label :description %>
+            <%= form.text_area :description, value: @car.description %>
+        </div>
+
+        <div>
+            <%= form.label :link, "External Link" %>
+            <%= form.text_field :link, value: @car.link %>
+        </div>
+
+        <div>
+            <%= form.submit "Update Car" %>
+        </div>
+
+    <% end %>
+
+    <h2> Upload New Car Image</h2>
+    <%= form_with(url: create_image_path(car_id: @car.id), local: true,multipart: true) do |form| %>
+        <div>
+            <%= form.label :image, "Upload Car Images" %>
+            <%= file_field_tag "image", accept: "image/*" %>
+        </div>
+
+        <div>
+            <%= form.submit "Upload Image" %>
+        </div>
+    <% end %>
+</div>
+
+    <% if @car.images.any? %> 
+      <% @car.images.each do |image| %> 
+        <div class="car-image" style="background-image: url('<%= image.url %>'); background-size: cover; background-position: center;">
+            <%= button_to "Delete Image", delete_image_path(image_id: image.id), method: :delete, class: "delete-btn" %>
+        </div>
+      <% end%> 
+    <% end%>
+
+<% else %>
+    <h1> No Car Found</h1>
+<% end %>
