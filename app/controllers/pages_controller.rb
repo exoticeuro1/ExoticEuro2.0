@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 
     def about 
+        @user = User.find_by(id: 1)
+        @about = @user.bio
         render :about
     end 
 
@@ -9,6 +11,8 @@ class PagesController < ApplicationController
     end
     
     def policy
+        @user = User.find_by(id: 1)
+        @policy = @user.policy
         render :policy
     end
 
