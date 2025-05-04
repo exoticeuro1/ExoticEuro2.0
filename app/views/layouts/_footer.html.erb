@@ -1,18 +1,27 @@
 
       <footer>
         <div class = "top-footer-section">
-            <h2>Exotic Euro</h2>
-            <div class = "social-media">
-                <div class = "social-media-icon"></div>
-                <div class = "social-media-icon"></div>
-                <div class = "social-media-icon"></div>
+            <h2> <%= link_to 'Exotic Euro', root_path, class: "link" %></h2>
+            <div class="social-media">
+            <%= link_to @user.facebook, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
+                <%= raw File.read(Rails.root.join("app", "assets", "images", "facebook-icon.svg")) %>
+            <% end %>
+
+            <%= link_to @user.instagram, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
+                <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+            <% end %>
+
+            <%= link_to @user.youtube, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
+                <%= raw File.read(Rails.root.join("app", "assets", "images", "youtube-icon.svg")) %>
+            <% end %>
             </div>
+
         </div>
 
         <div class = "middle-footer-section">
-            <h2>About Us</h2>
-            <h2>Contact</h2>
-            <h2>Policy</h2>
+            <h2><%= link_to 'About Us', about_path, class: "link" %></h2>
+            <h2><%= link_to 'Contact', contact_path, class: "link" %></h2>
+            <h2><%= link_to 'Policy', policy_path, class: "link" %></h2>
         </div>
 
         <div class = "bottom-footer-section">

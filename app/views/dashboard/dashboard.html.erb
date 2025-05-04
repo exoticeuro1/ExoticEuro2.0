@@ -94,12 +94,14 @@
 
 <% if @cars.present? %>
     <h2>All Cars</h2>
+    <% no_image = Image.find_by(name: "no_image") %>
+
 <% @cars.each do |car| %>
   <%= link_to edit_car_path(car_id: car.id), class: "car-link" do %>
     <% if car.images.any? %>
       <div class="car-card" style="background-image: url('<%= car.images.first.url %>'); background-size: cover; background-position: center;">
     <% else %>
-      <div class="car-card" style="background-color: #ccc;">
+      <div class="car-card" style="background-image: url('<%= no_image&.url %>'); background-size: cover; background-position: center;">
     <% end %>
         <h3><%= car.car_make %> <%= car.car_model %></h3>
       </div>
@@ -119,7 +121,6 @@
         padding: 10px;
         margin: 10px;
         border-radius: 20px;
-        background-image: url(car.image.url);
         overflow: hidden;
     }
 

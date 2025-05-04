@@ -7,6 +7,7 @@ class CreateCars < ActiveRecord::Migration[8.0]
       t.string :car_make
       t.text :description
       t.string :link
+      t.string :featured, default: false
 
       t.timestamps
     end
