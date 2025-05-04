@@ -18,6 +18,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.string "car_make"
     t.text "description"
     t.string "link"
+    t.string "featured", default: "f"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
