@@ -77,11 +77,11 @@
             
             <div class="before-carousel">
                 <div class="before-car-slide" >
-                    <div class="car-dmg car1"></div>
-                    <div class="car-dmg car2"></div>
-                    <div class="car-dmg car3"></div>
-                    <div class="car-dmg car4"></div>
-                    <div class="car-dmg car5"></div>
+                    <div class="car-dmg car1" style = "background-image: url('<%= Image.find_by(name: "before_car_one").url %>'); "></div>
+                    <div class="car-dmg car2" style = "background-image: url('<%= Image.find_by(name: "before_car_two").url %>'); "></div>
+                    <div class="car-dmg car3" style = "background-image: url('<%= Image.find_by(name: "before_car_three").url %>'); "></div>
+                    <div class="car-dmg car4" style = "background-image: url('<%= Image.find_by(name: "before_car_four").url %>'); "></div>
+                    <div class="car-dmg car5" style = "background-image: url('<%= Image.find_by(name: "before_car_five").url %>'); "></div>
                 </div>
             </div>
             
@@ -104,11 +104,11 @@
             
             <div class="after-carousel">
                 <div class="after-car-slide">
-                    <div class="car-fix car1-mirror"></div>
-                    <div class="car-fix car2-mirror"></div>
-                    <div class="car-fix car3-mirror"></div>
-                    <div class="car-fix car4-mirror"></div>
-                    <div class="car-fix car5-mirror"></div>
+                    <div class="car-fix car1-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_one").url %>'); "></div>
+                    <div class="car-fix car2-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_two").url %>'); "></div>
+                    <div class="car-fix car3-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_three").url %>'); "></div>
+                    <div class="car-fix car4-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_four").url %>'); "></div>
+                    <div class="car-fix car5-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_five").url %>'); "></div>
                 </div>
             </div>
         </div>
@@ -122,16 +122,16 @@
                 <a> Check out our collection of existing ehicles.</a>
             </div>
 
-            <% if @cars.present?%>
+            <% if @feature.present?%>
                 <h2> Featured:</h2>
                 
-                <div class = "featured-car">
+                <div class = "featured-car" style = "background-image: url('<%= @feature.url %>');">
                     <div class = "text-gradiant"></div>
 
                     <div class = "featured-text-content">
-                        <h2>2023 BMW M3</h2>
+                        <h2> <%= @car.car_make%> <%= @car.car_model%></h2>
                         <div class = "featured-details">
-                            <p>$70,000</p>
+                            <p> <%= number_to_currency(@car.price)%></p>
                             <div class = "featured-details-cta">
                                 <a>Details</a>
                             </div>

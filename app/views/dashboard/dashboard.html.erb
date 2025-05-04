@@ -1,5 +1,5 @@
 <h1> DashBoard</h1>
-<p>Welcome to the dashboard!</p>
+<%= button_to "Back to Main", root_path, method: :get%>
 <div class='form-card'>
   <h2> Update User</h2>
   <%= form_with(url: update_user_path(user_id: @user.id), local: true, method: :patch) do |form| %>

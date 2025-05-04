@@ -23,7 +23,7 @@
     box-shadow: 0px 0px 5px #000000;
     border-radius: 21px;
     overflow: hidden; /* This is important to prevent overflow */
-    background-image: url('car.jpg');
+
     background-size: cover; /* <== SUPER IMPORTANT */
     background-position: center; /* <== Also important */
     background-repeat: no-repeat; /* prevents ugly repeats */
