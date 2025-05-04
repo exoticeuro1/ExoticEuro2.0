@@ -1,13 +1,14 @@
 .side-page {
     height: 80vh;
     width: 80vw;
+    color: white;
 }
 
 .side-page h1 {
     font-size: 5em;
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    
 }
 .side-page p {
     font-size: 3em;
