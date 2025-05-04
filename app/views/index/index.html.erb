@@ -133,7 +133,7 @@
                         <div class = "featured-details">
                             <p> <%= number_to_currency(@car.price)%></p>
                             <div class = "featured-details-cta">
-                                <a>Details</a>
+                                <%= link_to 'Details', car_path(car_id: @car.id), style: "color: white; text-decoration: none;" %>
                             </div>
                         </div>
                     </div>
@@ -141,9 +141,10 @@
             <% else %>
                 <p> Currently, we do not have any vichles available. </p>    
             <% end %>
-            <div class = "view-featured">
-                <a>View More</a>
-            </div>
+        <%= link_to cars_path, class: "view-featured" do %>
+            View More
+        <% end %>
+
     </div>
 
         <%#--------------------------------------------------------------------------------------------------------%>
