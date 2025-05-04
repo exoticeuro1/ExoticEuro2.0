@@ -32,11 +32,6 @@ puts "Admin user created"
     link: "https://www.toyota.com/camry/",
 )
 
-@car_image = Image.create!(
-    name: "car_image",
-    url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
-    car_id: @car.id,
-)
 puts "Cars Created: #{Car.count}"
 
 herobanner_image = Image.create!(
