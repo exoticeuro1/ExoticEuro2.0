@@ -35,3 +35,18 @@ header .bottom a {
     text-decoration: none;
     color: white;
 }
+
+@media (max-width: 420px) {
+    header .top h1 {
+        font-size: 8.2rem;
+        margin-top: 100px;
+        padding: 0;
+    }
+    header .bottom a {
+        font-size: 2.1rem;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: white;
+    }
+}

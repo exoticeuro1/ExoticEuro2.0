@@ -64,3 +64,57 @@
     background-position: center; 
     background-repeat: no-repeat; 
 }
+
+
+@media (max-width: 420px) {
+.location-card {
+    width: 90%;
+    height: auto;
+    margin-top: 100px; /* So the map can overlap nicely */
+    position: relative; /* Important for map positioning */
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.left-side {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.work-hours {
+    margin-top: 10px;
+}
+
+.location-map {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url("map.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top: -75px; /* Half of its height to overlap the card */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white; /* Optional: a border around the map for better pop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: a little shadow */
+}
+
+.location-card h2 {
+    margin-top: 90px; /* Push the address below the floating map */
+    font-size: 1.5rem;
+}
+}

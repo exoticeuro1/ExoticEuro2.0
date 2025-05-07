@@ -53,3 +53,16 @@ font-weight: bold;
     
 }
 
+@media (max-width: 420px) {
+    .step-by-step {
+        width: 100%;
+    }
+
+    .step-text{
+        font-size: 1.4rem;
+    }
+
+    .call-button a {
+        font-size: 1.6rem;
+    }
+}
