@@ -265,4 +265,8 @@ form input[type="submit"]:hover {
         margin-top: 0;
         padding-top: 0;
     }
+
+    .middle-footer-section{
+        gap: 20px;
+    }
   }

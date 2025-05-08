@@ -6,13 +6,24 @@
 
 <div class="grid-container">
   <% @cars.each do |car| %>
-    <%= link_to car_path(car_id: car.id), class: "display-car", style: "background-image: url('#{car.images.first.url}');" do %>
-      <div class="text-gradiant"></div>
+    <% if car.images.present? %>
+      <%= link_to car_path(car_id: car.id), class: "display-car", style: "background-image: url('#{car.images.first.url}');" do %>
+        <div class="text-gradiant"></div>
 
-      <div class="car-text">
-        <h2><%= car.car_make %> <%= car.car_model %></h2>
-        <span><%= number_to_currency(car.price) %></span>
-      </div>
+        <div class="car-text">
+          <h2><%= car.car_make %> <%= car.car_model %></h2>
+          <span><%= number_to_currency(car.price) %></span>
+        </div>
+      <% end %>
+    <% else %>
+     <%= link_to car_path(car_id: car.id), class: "display-car", style: "background-image: url('#{Image.find_by(name: "no_image")}');" do %>
+        <div class="text-gradiant"></div>
+
+        <div class="car-text">
+          <h2><%= car.car_make %> <%= car.car_model %></h2>
+          <span><%= number_to_currency(car.price) %></span>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
