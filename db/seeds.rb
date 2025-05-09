@@ -46,7 +46,12 @@ no_image = Image.create!(
 )
 puts "No Image Created"
 
-before_car_one = Image.create!(
+location_image = Image.create!(
+  name: "location_image",
+  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/location.png",
+)
+
+  before_car_one = Image.create!(
   name: "before_car_one",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_damaged.jpg",
 )

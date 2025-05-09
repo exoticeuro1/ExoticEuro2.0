@@ -1,0 +1,124 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image {
+    border-radius: 15px;
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  
+}
+
+.thumbnail {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnail.active {
+  border-color: #007BFF;
+}
+
+.car-info {
+  flex: 1;
+}
+
+.page-header {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.page-header h2 {
+    margin: 0;
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;}
+    .car-info .btn {
+  margin-top: 20px;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-link:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+<div class="page-header">
+<h2><%= @car.car_make %> <%= @car.car_model %> </h2>
+</div>
+ <div class="container">
+  <!-- Left: Image Gallery -->
+  <div class="image-gallery">
+    <% if @car.images.present? %>
+      <%= image_tag url_for(@car.images.first.url), class: "main-image", id: "mainImage" %>
+
+      <div class="thumbnails">
+        <% @car.images.each_with_index do |image, index| %>
+          <%= image_tag url_for(image.url), class: "thumbnail #{'active' if index == 0}", onclick: "changeImage(this)" %>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No images available for this car.</p>
+    <% end %>
+  </div>
+
+  <!-- Right: Car Info -->
+  <div class="car-info">
+    <p><strong>Price:</strong> <%= number_to_currency(@car.price) %></p>
+    <p><strong>Mileage:</strong> <%= @car.miles %> miles</p>
+    <p><strong>Description:</strong> <%= @car.description %></p>
+   
+    <div class="btn">
+        <%= link_to 'Go to Listing', @car.link, class: "btn-link" %>
+    </div>
+  </div>
+</div>
+
+<script>
+  function changeImage(el) {
+    const mainImage = document.getElementById("mainImage");
+    mainImage.src = el.src;
+
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+      thumb.classList.remove('active');
+    });
+    el.classList.add('active');
+  }
+</script>

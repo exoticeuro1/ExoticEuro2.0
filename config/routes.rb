@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about", as: "about"
   get "/contact", to: "pages#contact", as: "contact"
   get "/policy", to: "pages#policy", as: "policy"
+  
+  get "/cars", to: "pages#cars", as: "cars"
+  get "/car/:car_id", to: "pages#car", as: "car"
   # Dashboard
   get "/dashboard", to: "dashboard#page", as: "dashboard"
   # user
