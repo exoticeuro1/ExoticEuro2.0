@@ -109,6 +109,7 @@ footer{
     width: 100%;
     height: 100%;
     display: block;
+    color: white;
 }
 
 .social-media-icon:hover {
@@ -249,7 +250,6 @@ form input[type="submit"]:hover {
   @media (max-width: 420px){
     .page{
         width: 100vw;
-        border: 2px solid red;
     }
 
     /***********/
@@ -266,7 +266,40 @@ form input[type="submit"]:hover {
         padding-top: 0;
     }
 
-    .middle-footer-section{
-        gap: 20px;
+    footer{
+        height: auto; 
+        padding: 10px 0;
+    }
+    .top-footer-section {
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5px; /* smaller margin */
+        padding: 0;
+        gap: 5px; /* add some spacing between items */
+    }
+
+    .middle-footer-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bottom-footer-section {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .top-footer-section h2{
+        font-size: 3rem; /* slightly smaller heading if you want */
+    }
+    .middle-footer-section h3{
+        margin: 0;
+        padding: 5px;
     }
   }

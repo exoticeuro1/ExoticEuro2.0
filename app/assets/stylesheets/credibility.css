@@ -140,53 +140,43 @@
 
 
 .car1{
-    background-image: url("car1_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 1) * -1);
 }
 
 .car2{
-    background-image: url("car2_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 2) * -1);
 }
 
 .car3{
-    background-image: url("car3_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 3) * -1);
 }
 
 .car4{
-    background-image: url("car4_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 4) * -1);
 }
 
 .car5{
-    background-image: url("car5_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 5) * -1);
 }
 
 /*  After carousel*/
 .car1-mirror{
-    background-image: url("car1_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 1) * -1);
 }
 
 .car2-mirror{
-    background-image: url("car2_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 2) * -1);
 }
 
 .car3-mirror{
-    background-image: url("car3_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 3) * -1);
 }
 
 .car4-mirror{
-    background-image: url("car4_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 4) * -1);
 }
 
 .car5-mirror{
-    background-image: url("car5_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 5) * -1);
 }
 
@@ -251,4 +241,44 @@
 .car-fix {
     right: 400%;
 }
+}
+
+@media(max-width: 420px) {
+    .credibility-section{
+        margin: 20px;
+        height: auto;
+    }   
+
+    
+    .testimony-section{
+        width: 90%;
+        margin: 10px;
+        height: 240px;
+    }
+
+    .testimony-image{
+        width: 60px;
+        height: 60px;
+    }
+    .testimony-text h3{
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+    }
+    .testimony-text a{
+        font-size: 1.2rem;
+
+    }
+    .testimony {
+        flex-direction: column;
+        align-items: center; 
+        width: 90%;
+    }
+    
+    .before-carousel, .after-carousel{
+        width: 90%;
+    }
+    
 }
