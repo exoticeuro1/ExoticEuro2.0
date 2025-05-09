@@ -1,5 +1,6 @@
 .side-page {
-    height: auto;
+    min-height: 100vh;
+    justify-content: space-between;
     width: 80vw;
     color: white;
 }
