@@ -82,6 +82,18 @@
     
 }
 
+.no-cars{ 
+    width: 520px;
+    height: 200px;
+    margin: 20px auto;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #7195B5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;    
+    font-size: 1.5rem;
+
+}
 
 .view-featured {
     width: 12%;
