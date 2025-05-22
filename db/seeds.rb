@@ -10,10 +10,10 @@
 
 
 @admin = User.create!(
-    email: "tori@gmail.com",
+    email: "exoticeuro@gmail.com",
     password: "password",
     display_email: "eurodealz@gmail.com",
-    name: "Tori",
+    name: "Tohorie Lebron",
     bio: "I repair cars",
     phone: "1234567890",
     youtube: "https://www.youtube.com/user/torim",

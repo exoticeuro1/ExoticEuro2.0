@@ -14,11 +14,19 @@ header {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
+header .top {
+    max-width: 90%; /* Allows the title to wrap */
+}
+
 header .top h1 {
-    font-size: 12rem;
+    font-size: clamp(6rem, 12vw, 11.25rem); /* Keeps it large */
+    line-height: 1.1;
     margin-top: 100px;
     padding: 0;
+    word-break: break-word; /* Optional, for long words */
+    text-wrap: balance; /* Optional for smarter wrapping (only in modern browsers) */
 }
+
 
 header .bottom {
     display: flex;
@@ -29,24 +37,9 @@ header .bottom {
 }
 
 header .bottom a {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3.75rem); /* Scales between 1.8rem and 3.75rem */
     margin: 0;
     padding: 0;
     text-decoration: none;
     color: white;
-}
-
-@media (max-width: 420px) {
-    header .top h1 {
-        font-size: 8.2rem;
-        margin-top: 100px;
-        padding: 0;
-    }
-    header .bottom a {
-        font-size: 2.1rem;
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-        color: white;
-    }
 }
