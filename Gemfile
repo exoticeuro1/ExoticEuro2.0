@@ -69,3 +69,5 @@ gem "devise"
 
 gem "google-cloud-storage"
 
+gem "postgresql", "~> 1.0"
+

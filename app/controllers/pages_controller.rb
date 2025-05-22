@@ -16,13 +16,12 @@ class PagesController < ApplicationController
         render :policy
     end
 
-    def cars 
-        @cars = Car.all
-        render :cars
-    end
-
     def car
         @car = Car.find(params[:car_id])
         render :car
     end
+
+    def exp
+        render :exp
+    end 
 end

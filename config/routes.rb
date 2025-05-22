@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get "/contact", to: "pages#contact", as: "contact"
   get "/policy", to: "pages#policy", as: "policy"
   
-  get "/cars", to: "pages#cars", as: "cars"
   get "/car/:car_id", to: "pages#car", as: "car"
   # Dashboard
   get "/dashboard", to: "dashboard#page", as: "dashboard"
@@ -37,4 +36,7 @@ Rails.application.routes.draw do
   # images
   post "/dashboard/create_image", to: "dashboard#create_image", as: "create_image"
   delete "/dashboard/delete_image", to: "dashboard#delete_image", as: "delete_image"
+
+
+  get "/exp", to: "pages#exp", as: "exp"
 end
