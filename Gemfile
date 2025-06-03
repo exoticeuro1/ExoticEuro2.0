@@ -67,6 +67,6 @@ gem "devise"
 
 gem "google-cloud-storage"
 
-gem 'pg', '>= 1.5'
+gem 'pg', '~> 1.5'
 
 
