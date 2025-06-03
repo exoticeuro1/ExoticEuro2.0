@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "cars", force: :cascade do |t|
     t.string "car_model"
     t.decimal "price"
@@ -28,7 +31,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "car_id"
+    t.bigint "car_id"
     t.index ["car_id"], name: "index_images_on_car_id"
   end
 
