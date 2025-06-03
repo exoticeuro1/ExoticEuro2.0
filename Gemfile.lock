@@ -466,6 +466,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  pg (>= 1.5)
   postgresql (~> 1.0)
   propshaft
   puma (>= 5.0)
