@@ -1,26 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: your_app_development
+
 production:
-  connects_to:
-    writing: primary
-    reading: primary
-    cache: cache
-    queue: queue
-    cable: cable
-
-  primary:
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-
-  cache:
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-    migrations_paths: db/cache_migrate
-
-  queue:
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-    migrations_paths: db/queue_migrate
-
-  cable:
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-    migrations_paths: db/cable_migrate
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
