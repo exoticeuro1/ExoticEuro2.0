@@ -3,6 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  url: <%= ENV["DATABASE_URL"] %>
 
 development:
   <<: *default
@@ -11,25 +12,19 @@ development:
 test:
   <<: *default
   database: your_app_test
-
+  
 production:
   primary:
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
 
   cable:
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
     migrations_paths: db/cable_migrate
-
-  cache:
-    <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
-    migrations_paths: db/cache_migrate
 
   queue:
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
     migrations_paths: db/queue_migrate
 
-
+  cache:
+    <<: *default
+    migrations_paths: db/cache_migrate
