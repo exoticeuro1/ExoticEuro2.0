@@ -46,6 +46,7 @@ header .bottom {
     align-items: center;
     margin: 80px;
     gap: 0.5rem; /* Space between the two links */
+    z-index: 4;
 }
 
 header .bottom a {
