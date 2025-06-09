@@ -3,16 +3,35 @@
         <div class = "top-footer-section">
             <h2> <%= link_to 'Exotic Euro', root_path, class: "link" %></h2>
             <div class="social-media">
-            <%= link_to @user.facebook, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
-                <%= raw File.read(Rails.root.join("app", "assets", "images", "facebook-icon.svg")) %>
+            
+            <% if @user.facebook.present? %>
+                <%= link_to @user.facebook, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "facebook-icon.svg")) %>
+                <% end %>
+            <% else %>
+                <%= link_to "#", onclick: "alert('Facebook link hasn\\'t been added yet!'); return false;", class: "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                <% end %>
             <% end %>
 
-            <%= link_to @user.instagram, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
-                <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+            <% if @user.instagram.present? %>
+               <%= link_to @user.instagram, target: "_blank", rel: "noopener", class:  "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                <% end %>
+            <% else %>
+                <%= link_to "#", onclick: "alert('Instagram link hasn\\'t been added yet!'); return false;", class: "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                <% end %>
             <% end %>
 
-            <%= link_to @user.youtube, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
-                <%= raw File.read(Rails.root.join("app", "assets", "images", "youtube-icon.svg")) %>
+            <% if @user.youtube.present? %>
+                <%= link_to @user.youtube, target: "_blank", rel: "noopener", class: "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "youtube-icon.svg")) %>
+                <% end %>
+             <% else %>
+                <%= link_to "#", onclick: "alert('Youtube link hasn\\'t been added yet!'); return false;", class: "social-media-icon" do %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                <% end %>
             <% end %>
             </div>
 
