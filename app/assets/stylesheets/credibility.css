@@ -2,6 +2,8 @@
     width: 95%;
     margin-top: 50px;
     color: white;
+    height: auto;
+    padding-bottom: 20px;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
@@ -221,30 +223,21 @@
 }
 
 @media (max-width: 420px) {
+
+
 .car-dmg {
-    left: 400%;
+    left: 250%;
 }
 .car-fix {
-    right: 400%;
+    right: 250%;
 }
 }
 
-@media(max-width: 420px) {
-    .credibility-section{
-        margin: 20px;
-        height: auto;
-    }   
-
-    
+@media(max-width: 420px) {  
     .testimony-section{
         width: 90%;
         margin: 10px;
-        height: 240px;
-    }
-
-    .testimony-image{
-        width: 60px;
-        height: 60px;
+        min-height: 155px;
     }
     .testimony-text h3{
         font-size: 1rem;
@@ -265,6 +258,17 @@
     
     .before-carousel, .after-carousel{
         width: 90%;
+        height: 130px;
+
+    }
+
+    .before-car-slide, .after-car-slide{
+        height: 130px;
+    }
+    .car-dmg,
+    .car-fix {
+        height: 120px;
+        width: 200px;
     }
     
 }
