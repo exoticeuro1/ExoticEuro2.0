@@ -15,8 +15,8 @@
     font-size: 1.2rem;
     padding: 20px;
     border-radius: 8px;
-    overflow: hidden;
-    min-height: 80px;
+    height: 100px;
+
 }
 
 .testimony-outer {
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: center;
     pointer-events: none; /* Prevent clicks on hidden ones */
+
 }
   
 .testimony-outer.active {
