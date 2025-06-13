@@ -9,13 +9,13 @@
 /* --------------------------------------------------------------------------------------------------------------- */
 .testimony-section {
     width: 80%;
-    margin: 32px auto;
+    margin: 32px;
     color: #fff;
     position: relative;
     font-size: 1.2rem;
     padding: 20px;
     border-radius: 8px;
-    height: 100px;
+    height: 120px;
 
 }
 
