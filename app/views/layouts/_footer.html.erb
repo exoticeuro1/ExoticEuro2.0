@@ -10,7 +10,7 @@
                 <% end %>
             <% else %>
                 <%= link_to "#", onclick: "alert('Facebook link hasn\\'t been added yet!'); return false;", class: "social-media-icon" do %>
-                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "facebook-icon.svg")) %>
                 <% end %>
             <% end %>
 
@@ -30,7 +30,7 @@
                 <% end %>
              <% else %>
                 <%= link_to "#", onclick: "alert('Youtube link hasn\\'t been added yet!'); return false;", class: "social-media-icon" do %>
-                    <%= raw File.read(Rails.root.join("app", "assets", "images", "instagram-icon.svg")) %>
+                    <%= raw File.read(Rails.root.join("app", "assets", "images", "youtube-icon.svg")) %>
                 <% end %>
             <% end %>
             </div>

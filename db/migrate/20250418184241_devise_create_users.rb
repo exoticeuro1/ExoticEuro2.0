@@ -37,6 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.string :phone
       t.string :display_email
       t.string :location
+      t.string :location_link
       t.string :youtube
       t.string :facebook
       t.string :instagram

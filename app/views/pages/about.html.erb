@@ -1,4 +1,5 @@
 <div class = "side-page">
-<h1> About us </h1>
-<p> <%= @about %> </p>
+    <%=  button_to " Home Page ", index_path, method: :get, class: "home-btn"%>
+    <h1> About us </h1>
+    <%= sanitize @about, tags: %w(p br strong em ul ol li) %> 
 </div>

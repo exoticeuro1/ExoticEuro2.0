@@ -3,16 +3,48 @@
     justify-content: space-between;
     width: 80vw;
     color: white;
+    
 }
 
 .side-page h1 {
-    font-size: 5em;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
     text-align: center;
     margin-top: 20px;
     
 }
 .side-page p {
-    font-size: 3em;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin: 20px 0;
+    text-align: center;
+}
+
+.home-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  display: inline-block;
+  font-size: 1.1rem;
+
+  /* animation helpers */
+  transition: 
+    background-color 0.25s ease,
+    color            0.25s ease,
+    transform        0.25s ease,
+    box-shadow       0.25s ease;
+}
+
+.home-btn:hover,
+.home-btn:focus-visible {          /* focus for keyboard users */
+  background-color: rgba(255,255,255,0.12);   /* faint tint   */
+  color: #fff;                                  /* keep text white */
+  transform: translateY(-3px);                  /* tiny lift   */
+  box-shadow: 0 6px 12px rgba(255,255,255,0.25);/* soft glow   */
+  text-decoration: none;                        /* remove underline if any */
+}
+
+.side-page form {           /* the wrapper created by `button_to`   */
+  text-align: center;       /* centers its inline children           */
 }

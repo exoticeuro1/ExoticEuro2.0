@@ -1,13 +1,10 @@
 <div class = "side-page">
 
+    <%=  button_to " Home Page ", index_path, method: :get, class: "home-btn"%>
     <h1> Policy </h1>
 
-    <p><%= @policy %></p>    
+    <%= sanitize @policy, tags: %w(p br strong em ul ol li) %>  
 
 </div>
 
-<style>
-    .side-page p {
-        font-size: 2rem;
-    }
-</style>
+
