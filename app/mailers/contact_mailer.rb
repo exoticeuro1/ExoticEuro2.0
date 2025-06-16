@@ -9,7 +9,7 @@ class ContactMailer < ApplicationMailer
         @message = message
 
         mail(
-        to:      ENV['GMAIL_EMAIL'],                 # where you want to receive the message
+        to:      @user.contact_email,                 # where you want to receive the message
         from:    %("#{@name}" <#{@email}>),                  # appears as the sender
         subject: "ExoticEuro New Inquiry"
         )

@@ -10,11 +10,22 @@
 
 
 @admin = User.create!(
-    email: "exoticeuro@gmail.com",
-    password: "password",
-    display_email: "eurodealz@gmail.com",
-    name: "Tohorie Lebron",
-    bio: <<~HTML.chomp,
+  email: "exoticeuro1@gmail.com",
+  password: "password",
+  
+  display_email: "eurodealz@gmail.com",
+  contact_email: "exoticeuro1@gmail.com",
+  
+  phone: "(901)-321-1234",
+  
+  location: nil,
+  location_link: nil,
+  
+  youtube: nil,
+  facebook: nil,
+  instagram: nil,
+
+  bio: <<~HTML.chomp,
     <p>We’re a small, independent shop that buys repair-worthy luxury cars, restores them in-house, and sells them at a fixed price.</p>
 
     <p>Founded in 2019 by three longtime technicians, we focus on mechanical integrity and transparent costs.</p>
@@ -25,11 +36,8 @@
 
     <p>The result: a luxury car that drives the way it should, priced only for the work that went into it—nothing more, nothing less.</p>
   HTML
-    phone: "(901)-321-1234",
-    youtube: nil,
-    facebook: nil,
-    instagram: nil,
-   policy: <<~HTML.chomp,
+ 
+  policy: <<~HTML.chomp,
     <p><strong>Scope&nbsp;of&nbsp;Service.</strong> We purchase, restore, and resell used luxury vehicles. Our responsibility ends once the completed vehicle is delivered and signed for by the customer.</p>
 
     <p><strong>Estimates &amp; Pricing.</strong> All written estimates include parts, labor, and taxes. The quoted total will not change unless the customer approves a revised work order in writing.</p>
@@ -48,22 +56,11 @@
 
 puts "Admin user created"
 
-@car = Car.create!(
-    car_model: "Camry",
-    description: "A reliable and fuel-efficient sedan.",
-    price: 20000,
-    miles: 30000,
-    car_make: "Toyota",
-    link: "https://www.toyota.com/camry/",
-)
-
-puts "Cars Created: #{Car.count}"
-
 herobanner_image = Image.create!(
   name: "landing_car",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
 )
-puts "Hero Banner Image: #{Image.count}"  
+puts "Hero Banner Image Created"  
 
 no_image = Image.create!(
   name: "no_image",
@@ -75,8 +72,9 @@ location_image = Image.create!(
   name: "location_image",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/location.png",
 )
+puts "Location Image Created"
 
-  before_car_one = Image.create!(
+before_car_one = Image.create!(
   name: "before_car_one",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_damaged.jpg",
 )
@@ -100,6 +98,7 @@ before_car_five = Image.create!(
   name: "before_car_five",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_damaged.jpg",
 )
+puts "Before Images Created"
 
 after_car_one = Image.create!(
   name: "after_car_one",
@@ -121,4 +120,4 @@ after_car_five = Image.create!(
   name: "after_car_five",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_fixed.jpg",
 )
-puts "Before and After Images Created: #{Image.where.not(id: 1).count}"
+puts "After Images Created"

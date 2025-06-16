@@ -45,6 +45,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.text "bio"
     t.string "phone"
     t.string "display_email"
+    t.string "contact_email"
     t.string "location"
     t.string "location_link"
     t.string "youtube"
