@@ -114,28 +114,26 @@
     <%#--------------------------------------------------------------------------------------------------------%>
 
     <%#-------------------------------------------- Featured section ---------------------------------------------%>
-    <div class = "featured-section">
+    <div class = "car-section">
             <div class = "section-header" > 
                 <h1> Ready-to-Go Deals </h1>
                 <a> Check out our collection of existing ehicles.</a>
             </div>
 
-            <% if @feature.present?%>
+            <% if @cars.present?%>
                 <h2> Featured:</h2>
                 
-                <div class = "featured-car" style = "background-image: url('<%= @feature.url %>');">
-                    <div class = "text-gradiant"></div>
-
-                    <div class = "featured-text-content">
-                        <h2> <%= @car.car_make%> <%= @car.car_model%></h2>
-                        <div class = "featured-details">
-                            <p> <%= number_to_currency(@car.price)%></p>
-                            <div class = "featured-details-cta">
-                                <%= link_to 'Details', car_path(car_id: @car.id), style: "color: white; text-decoration: none;" %>
-                            </div>
+                <% @cars.each do |car| %>
+                    <div class = "car-card">
+                        <div class = "car-display-image" style = "background-image: url('<%= car.images.first.url %>');"></div>
+                        <h3><%= car.car_model %> <%= car.car_model %></h3>
+                        <div class = "car-info">
+                            <p>Price: <%= number_to_currency(car.price) %></p>
+                            <p>Mileage: <%= number_with_delimiter(car.miles) %> miles</p>
+                            <%= button_to "View", car_path(car_id: car.id), method: :get, class: "car-btn"%>
                         </div>
                     </div>
-                </div>
+                <% end %>
             <% else %>
                 <div class = "no-cars">
                     <p> We're fresh out of vehicles right now! </p>

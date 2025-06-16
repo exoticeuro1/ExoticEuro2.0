@@ -2,7 +2,7 @@ class IndexController < ApplicationController
 
     def page
         @user = User.find(1)
-        @car = Car.order(:id).first
+        @cars = Car.order(:id).all
         render :index
     end 
 
