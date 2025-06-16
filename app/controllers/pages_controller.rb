@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+
     def about
         @about = @user.bio
         render :about
@@ -21,7 +22,19 @@ class PagesController < ApplicationController
         render :car
     end
 
-    def exp
-        render :exp
-    end 
+    def send_email
+        @user = User.find(1)
+        
+        
+        ContactMailer.contact_email(
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            phone: params[:phone],
+            email: params[:email],
+            message: params[:message]
+        ).deliver_now
+
+        flash[:notice] = "Email sent successfully!"
+        redirect_to contact_path
+    end
 end

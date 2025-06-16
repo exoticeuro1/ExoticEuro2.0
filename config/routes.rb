@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # Pages
   get "/about", to: "pages#about", as: "about"
   get "/contact", to: "pages#contact", as: "contact"
+  post "/contact/send_email", to: "pages#send_email", as: "send_email"
   get "/policy", to: "pages#policy", as: "policy"
   
   get "/car/:car_id", to: "pages#car", as: "car"
