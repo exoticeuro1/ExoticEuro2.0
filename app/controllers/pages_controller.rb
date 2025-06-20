@@ -22,6 +22,12 @@ class PagesController < ApplicationController
         render :car
     end
 
+    def testing
+        @car = Car.find(1)
+        @car_image = @car.images.first
+        render :testing
+    end 
+
     def send_email
         @user = User.find(1)
         
