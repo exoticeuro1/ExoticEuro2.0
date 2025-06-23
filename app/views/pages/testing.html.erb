@@ -14,7 +14,7 @@
                     <p> 100,000mi </p>
                 </div>
             </div>
-            <%= button_to "More", car_path(car_id:1), method: :get, class: "show-btn"%>
+            <%= button_to "More", testing_two_path(car_id:1), method: :get, class: "show-btn"%>
             
         </div>
 
@@ -121,6 +121,11 @@
     font-size: 1.2em;
     border: 1px solid white;
 }   
+.show-btn:hover {
+    background: #d1c0a8; 
+    color: #000;
+    text-decoration: none;
+}
 
 @media (max-width: 420px) {        /* fire on most phones */
   .card{

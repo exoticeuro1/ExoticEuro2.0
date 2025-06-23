@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post "/contact/send_email", to: "pages#send_email", as: "send_email"
   get "/policy", to: "pages#policy", as: "policy"
   get "/testing", to: "pages#testing", as: "testing"
+  get "/testing_two", to: "pages#testing_two", as: "testing_two"
   
   get "/car/:car_id", to: "pages#car", as: "car"
   # Dashboard

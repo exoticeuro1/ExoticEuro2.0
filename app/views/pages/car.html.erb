@@ -1,116 +1,79 @@
-<style>
-    * {
-      box-sizing: border-box;
-    }
 
-.container {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
+<div class="view">
+ <div class = "car-card">
+    <div class="image-gallery">
+      <% if @car.images.present? %>
+        <%= image_tag url_for(@car.images.first.url), class: "main-image", id: "mainImage" %>
 
-.image-gallery {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-image {
-    border-radius: 15px;
-  width: 800px;
-  height: 500px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-}
-
-.thumbnails {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  
-}
-
-.thumbnail {
-  border-radius: 10px;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.thumbnail.active {
-  border-color: #007BFF;
-}
-
-.car-info {
-  flex: 1;
-}
-
-.page-header {
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-.page-header h2 {
-    margin: 0;
-    font-size: 5rem;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 1px;}
-    .car-info .btn {
-  margin-top: 20px;
-}
-
-.btn-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.btn-link:hover {
-  background-color: #0056b3;
-}
-
-</style>
-
-<div class="page-header">
-<h2><%= @car.car_make %> <%= @car.car_model %> </h2>
-</div>
- <div class="container">
-  <!-- Left: Image Gallery -->
-  <div class="image-gallery">
-    <% if @car.images.present? %>
-      <%= image_tag url_for(@car.images.first.url), class: "main-image", id: "mainImage" %>
-
-      <div class="thumbnails">
-        <% @car.images.each_with_index do |image, index| %>
+        <div class="thumbnails">
+          <% @car.images.each_with_index do |image, index| %>
           <%= image_tag url_for(image.url), class: "thumbnail #{'active' if index == 0}", onclick: "changeImage(this)" %>
-        <% end %>
-      </div>
-    <% else %>
-      <p>No images available for this car.</p>
-    <% end %>
-  </div>
+          <% end %>
+        </div>
 
-  <!-- Right: Car Info -->
-  <div class="car-info">
-    <p><strong>Price:</strong> <%= number_to_currency(@car.price) %></p>
-    <p><strong>Mileage:</strong> <%= @car.miles %> miles</p>
-    <p><strong>Description:</strong> <%= @car.description %></p>
-   
-    <div class="btn">
-        <%= link_to 'Go to Listing', @car.link, class: "btn-link" %>
+      <% else %>
+        <p>No images available for this car.</p>
+      <% end %>
     </div>
+
+      <div class="car-info-card">
+        <h2><%= @car.car_make %> <%= @car.car_model %></h2>
+        <p><strong>Price:</strong> <%= number_to_currency(@car.price) %></p>
+        <p><strong>Mileage:</strong> <%= @car.miles %> miles</p>
+        <p><strong>Description:</strong> <%= @car.description %></p>
+  
+        <div class="btn">
+          <%= link_to 'Go to Listing', @car.link, class: "link-btn", target: '_blank', rel: 'noopener' %>
+        </div>
+
+      </div>
   </div>
 </div>
 
+<style>
+    .car-card { 
+        width: 90%;
+        max-width: 1200px;
+        height: 80%;
+        background-color: #E1E2E1;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 20px;
+        border-radius: 24px;
+    }
+@media (max-width: 768px){
+.view{
+    height: auto;
+
+}
+  .car-card{
+    flex-direction:column;
+    height:auto;
+    width: 80%;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .thumbnail {
+    /* override the fixed px width with a calc for 2 per row */
+    flex: 0 0 calc(50% - 10px); 
+    width: calc(50% - 10px);
+    /* height can stay your 80px, or switch to auto/aspect-ratio if you like */
+    height: 80px;
+  }
+  .image-gallery{
+    flex:0 0 100%;
+    max-width:100%;
+    height: auto;
+  }
+  .car-info-card{
+    margin-top:20px;
+    width: 90%;
+    min-height: 400px;
+  }
+}
+</style>
 <script>
   function changeImage(el) {
     const mainImage = document.getElementById("mainImage");

@@ -28,6 +28,11 @@ class PagesController < ApplicationController
         render :testing
     end 
 
+    def testing_two
+        @car = Car.find(1)
+        render :testing_two
+    end
+    
     def send_email
         @user = User.find(1)
         
