@@ -20,36 +20,113 @@
     height: 400px;
     color: white;
 }
-
-.car-display-image{
-    width: 300px;
-    height: 200px;
+ .card {
+        width: 400px;
+        height: 600px;
+        background: #000;
+        border: 1px solid #fff;
+        border-radius: 36px;
+        overflow: hidden;               
+        font-family: 'Inter', sans-serif;
+        color: #E1E2E1;
+    }
     
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    border: 1px solid #ccc;
+    .card_image {  
+        position: relative;        
+        width: 100%;
+        height: 50%;               
+        overflow: hidden;
+    }
+
+    /* the <img> itself */
+    .card_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;      
+        object-position: center;
+        display: block;      
+    }
+
+    .shadow{
+        position: absolute;  
+        inset: 0;            
+        background:linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0) 55%,  
+                    rgba(0,0,0,.85) 95%,
+                    #000 100%);       
+        pointer-events: none;         
+    }
+        
+    .card_content {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* container just keeps things centred – unchanged */
+.car_info{
+  position: relative;          
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.car-info{
-    width: 200px;
-    height: auto;
-
+/* the price label */
+.price{
+  position: relative;            
+  z-index: 2;                    
+  background:#000;               
+  padding: .15em .6em;           
+  margin: 0 0 -.7em;             
+  font-weight: 600;              
 }
 
-.car-card h3{
-    font-size: 2rem;
-    margin: 10px 0;
+/* the spec-box */
+.info-box{
+  width: 60%;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  margin-top: 0;                 
+  padding: 1.4em 10px 10px;      
+  text-align: center;             
 }
 
-.car-btn{
-    background-color: none;
-    border: 1px solid black;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+.show-btn {
+    background: #e2dac9; 
+    color: #000;
+    border-radius: 20px;
+    padding: 10px 40px;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 1px solid white;
+}   
+.show-btn:hover {
+    background: #d1c0a8; 
+    color: #000;
     text-decoration: none;
+}
+
+@media (max-width: 420px) {        /* fire on most phones */
+  .card{
+    width: 90vw;                   /* 90 % of the viewport width */
+    height: 520px;                 /* a bit shorter than 600 px */
+  }
+
+  .card_image{
+    height: 45%;                   /* keep roughly the same visual balance */
+  }
+
+  .show-btn{
+    font-size: 1em;                /* prevents huge buttons on tiny screens */
+    padding: 10px 30px;
+  }
 }
 
 .no-cars { 

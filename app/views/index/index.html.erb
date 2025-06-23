@@ -121,18 +121,28 @@
             </div>
 
             <% if @cars.present?%>
-                <h2> Featured:</h2>
                 
                 <% @cars.each do |car| %>
-                    <div class = "car-card">
-                        <div class = "car-display-image" style = "background-image: url('<%= car.images.first.url %>');"></div>
-                        <h3><%= car.car_model %> <%= car.car_model %></h3>
-                        <div class = "car-info">
-                            <p>Price: <%= number_to_currency(car.price) %></p>
-                            <p>Mileage: <%= number_with_delimiter(car.miles) %> miles</p>
-                            <%= button_to "View", car_path(car_id: car.id), method: :get, class: "car-btn"%>
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="<%= car.images.first.url %>" alt="Car Image">
+                                <div class = "shadow"></div>
+                            </div>
+
+                            <div class="card_content">
+                                <h2 class = "card_title" > Card Title </h2>
+                                <div class = "car_info">
+                                    <h3 class = "price" > $100,000 </h3> 
+                                    <div class = "info-box">
+                                        <p> $20,000 Below Market Value </p>
+                                        <p> 100,000mi </p>
+                                    </div>
+                                </div>
+                                <%= button_to "More", car_path(car_id: car.id), method: :get, class: "show-btn"%>
+                                
+                            </div>
+
                         </div>
-                    </div>
                 <% end %>
             <% else %>
                 <div class = "no-cars">
