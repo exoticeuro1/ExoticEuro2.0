@@ -4,6 +4,10 @@
     color: white;
     height: auto;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
@@ -12,6 +16,7 @@
     margin: 32px;
     color: #fff;
     position: relative;
+    align-self: center;
     font-size: 1.2rem;
     padding: 20px;
     border-radius: 8px;
@@ -27,6 +32,7 @@
     position: absolute; /* back to absolute so overlapping works */
     top: 0;
     left: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none; /* Prevent clicks on hidden ones */

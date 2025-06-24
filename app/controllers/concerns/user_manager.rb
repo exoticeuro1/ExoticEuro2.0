@@ -12,6 +12,6 @@ module UserManager
 
     private
     def user_params
-        params.permit(:name, :bio, :phone, :display_email, :location, :youtube, :facebook, :instagram, :policy)
+        params.permit(:name, :bio, :phone, :display_email, :location, :location_link, :youtube, :facebook, :instagram, :policy)
     end
 end 

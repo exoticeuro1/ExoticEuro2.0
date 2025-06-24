@@ -38,13 +38,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.string :contact_email
 
       t.string :location
-      t.string :location_link
+      t.text :location_link
       
       t.string :youtube
       t.string :facebook
       t.string :instagram
       t.text :policy
-
 
       t.timestamps null: false
     end

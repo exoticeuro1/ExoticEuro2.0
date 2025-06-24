@@ -11,10 +11,8 @@
 }
 
 .contact-card {
-
-    width: 95%;
-    max-width: 1032px;
-
+  width: 95%;
+  max-width: 1032px;
   box-sizing: border-box;
   min-height: 350px;
   border-radius: 48px;
@@ -22,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .contact-content {
@@ -44,7 +42,6 @@
 .hours-info {
   display: flex;
   flex-direction: column;
-
 }
 
 
@@ -59,16 +56,6 @@
 }
 
 
-.location-map{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: auto;
-    background-image: url("map.png");
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
 
 .contact-card h2{
     font-size: 2rem;
@@ -76,4 +63,23 @@
     padding: 0;
     text-align: center;
     padding-top: 20px;
+}
+
+@media(max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side,
+  .work-hours {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    text-align: center;
+    min-width: unset; /* Reset min-width for smaller screens */
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
