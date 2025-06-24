@@ -87,6 +87,16 @@
       </div>
 
       <div>
+        <%= form.label :year, "Year of Manufacture" %>
+        <%= form.number_field :year, step: 1, required: true %>
+      </div>
+
+      <div>
+        <%= form.label :compared_price %>
+        <%= form.number_field :compared_price, step: 0.01, placeholder: "Enter the price you want to compare with" %>
+      </div>
+
+      <div>
         <%= form.label :miles, "Mileage" %>
         <%= form.number_field :miles, step: 1, required: true %>
       </div>

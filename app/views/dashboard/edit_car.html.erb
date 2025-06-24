@@ -23,6 +23,16 @@
         </div>
 
         <div>
+            <%= form.label :year, "Year of Manufacture" %>
+            <%= form.number_field :year, step: 1, value: @car.year %>
+        </div>
+
+        <div>
+            <%= form.label :compared_price, "Market Price" %>
+            <%= form.number_field :compared_price, step: 0.01, value: @car.compared_price %>
+        </div>
+
+        <div>
             <%= form.label :miles, "Mileage" %>
             <%= form.number_field :miles, value: @car.miles %>
         </div>
@@ -60,6 +70,9 @@
       <% @car.images.each do |image| %> 
         <div class="car-image" style="background-image: url('<%= image.url %>'); background-size: cover; background-position: center;">
             <%= button_to "Delete Image", delete_image_path(image_id: image.id), method: :delete, class: "delete-btn" %>
+            <% if image.id != @car.display_image.to_i %>
+                <%= button_to "Set as Default", set_default_img_path(image_id: image.id), method: :patch, class: "delete-btn", style: "background-color: green" %>
+            <% end %>
         </div>
       <% end%> 
     <% end%>

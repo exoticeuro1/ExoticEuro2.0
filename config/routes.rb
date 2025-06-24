@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   
   get "/dashboard/edit_car/:car_id", to: "dashboard#edit_car", as: "edit_car"
   patch "/dashboard/update_car", to: "dashboard#update_car", as: "update_car"
+  patch "/dashboard/edit_car/:car_id/set_default_img/:image_id", to: "dashboard#set_default_img", as: "set_default_img"
   delete "/dashboard/delete_car", to: "dashboard#delete_car", as: "delete_car"
   # images
   post "/dashboard/create_image", to: "dashboard#create_image", as: "create_image"
