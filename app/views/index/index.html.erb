@@ -130,12 +130,12 @@
                             </div>
 
                             <div class="card_content">
-                                <h2 class = "card_title" > Card Title </h2>
+                                <h2 class = "card_title" > <%= car.car_make %> <%= car.car_model %> </h2>
                                 <div class = "car_info">
-                                    <h3 class = "price" > $100,000 </h3> 
+                                    <h3 class = "price" > <%=number_to_currency(car.price)%> </h3> 
                                     <div class = "info-box">
                                         <p> $20,000 Below Market Value </p>
-                                        <p> 100,000mi </p>
+                                        <p>  <%=number_with_delimiter(car.miles, delimiter: ',')  %> mi </p>
                                     </div>
                                 </div>
                                 <%= button_to "More", car_path(car_id: car.id), method: :get, class: "show-btn"%>
