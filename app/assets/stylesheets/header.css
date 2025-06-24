@@ -19,6 +19,7 @@ header {
 
 header .top {
     max-width: 90%; /* Allows the title to wrap */
+    text-align: left;
 }
 
 header .top h1 {
@@ -32,18 +33,16 @@ header .top h1 {
 
 
 header .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 80px;
+    width: 90%;
     gap: 0.5rem; /* Space between the two links */
     z-index: 4;
+    text-align: left;
+    
 }
 
-header .bottom a {
-    font-size: clamp(1.8rem, 5vw, 3.75rem); /* Scales between 1.8rem and 3.75rem */
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+header .bottom h1 {
+    font-size: clamp(3.5rem, 4vw, 5rem);
     color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
