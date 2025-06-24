@@ -1,6 +1,5 @@
 <div class = "side-page" style = "height: auto;">
-    
-    <%=  button_to " Home Page ", index_path, method: :get, class: "home-btn", style: "margin-top: 20px;" %>
+    <div class = "space"></div>
     <h1> Contact </h1>
   
     <div class = "contact-page">
@@ -76,7 +75,9 @@
 
 
 
-
+.space {
+    height: clamp(60px, 10vh, 120px);
+}
 /* Full-width field (e.g., message) */
 .form-group {
   margin-bottom: 1rem;

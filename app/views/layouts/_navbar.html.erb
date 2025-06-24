@@ -1,0 +1,79 @@
+<div class="navbar-section">
+  <div class="nav-left">
+    <%= link_to "ExoticEuro", root_path, class: "navbar-link" %>
+  </div>
+
+  <div class="nav-center">
+  </div>
+
+  <div class="nav-right">
+    <%= link_to 'Home', root_path, method: :get, class: "nav-home-link" %>
+  </div>
+</div>
+     
+
+<style>
+.navbar-section {
+  position: fixed;
+  top: 0;
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom-left-radius:  48px;
+  border-bottom-right-radius: 48px;
+  background: rgba(225, 226, 225, 0.62);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(225, 226, 225, 0.34);
+  z-index: 1000;
+}
+
+/* left & right panels get 1 “share” each, center gets 2 shares */
+.nav-left {
+  flex: 2;
+}
+.nav-right {
+  flex: 1;
+}
+.nav-center {
+  flex: 1;
+}
+
+/* now simply align the text inside each panel */
+.nav-left { text-align: left;
+  padding-left: 20px; 
+}
+
+.navbar-link {
+  color: #0d1b2a;
+  text-decoration: none;
+  
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-family: url('assets/fonts/Espoir.ttf') format('truetype');
+  letter-spacing: 0.01em;
+}
+
+.nav-home-link {
+  display: block;
+  width: 50%;        
+  text-align: center;
+  background-color: #0d1b2a;
+  color: white;
+  border: none;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+</style>

@@ -25,6 +25,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
+
+  <%= render partial: 'layouts/main_navbar' %>
+
   <body>
     <%= yield %>
     <% flash.each do |key, message| %>

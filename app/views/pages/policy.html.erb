@@ -1,11 +1,16 @@
-<div class = "side-page">
 
-    
-    <%=  button_to " Home Page ", index_path, method: :get, class: "home-btn", style: "margin-top: 20px;" %>
-    <h1> Policy </h1>
- 
+
+<div class = "side-page">
+    <div class = "space"></div>
+    <h1>Policy</h1>
     <%= sanitize @policy, tags: %w(p br strong em ul ol li) %>  
 
 </div>
+
+<style>
+.space {
+    height: clamp(60px, 10vh, 120px);
+}
+</style>
 
 
