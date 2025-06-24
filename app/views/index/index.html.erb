@@ -121,8 +121,8 @@
             </div>
 
             <% if @cars.present?%>
-                
-                <% @cars.each do |car| %>
+                <div class = "car-grid">
+                    <% @cars.each do |car| %>
                         <div class="card">
                             <div class="card_image">
                                 <img src="<%= car.images.first.url %>" alt="Car Image">
@@ -141,9 +141,9 @@
                                 <%= button_to "More", car_path(car_id: car.id), method: :get, class: "show-btn"%>
                                 
                             </div>
-
                         </div>
-                <% end %>
+                    <% end %>
+                </div>
             <% else %>
                 <div class = "no-cars">
                     <p> We're fresh out of vehicles right now! </p>

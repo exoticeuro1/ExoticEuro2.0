@@ -20,6 +20,28 @@
     height: 400px;
     color: white;
 }
+
+.car-grid {
+  display: grid;
+  gap: 60px;
+  /* make as many 400px-wide columns as will fit, then wrap */
+  grid-template-columns: repeat(auto-fit, 400px);
+  /* center the whole block of tracks in its container */
+  justify-content: center;
+  /* (optional) limit how wide the grid ever gets, and center it on the page */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* phones: 1 column */
+@media (max-width: 900px) {
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
  .card {
         width: 400px;
         height: 600px;
