@@ -7,7 +7,13 @@
   </div>
 
   <div class="nav-right">
-    <%= link_to 'Home', root_path, method: :get, class: "nav-home-link" %>
+    <a href="#" class="nav-home-link">
+      <!-- either use an img… -->
+      <img src="home.svg" alt="Home" class="nav-home-icon">
+      <!-- …or drop the <img> and use background-image in the CSS instead -->
+      <span class="nav-home-text">Home</span>
+    </a>
+
   </div>
 </div>
      
@@ -45,6 +51,9 @@
 .nav-left { text-align: left;
   padding-left: 20px; 
 }
+.nav-right { text-align: right;
+  padding-left: 20px; 
+}
 
 .navbar-link {
   color: #0d1b2a;
@@ -56,21 +65,26 @@
 }
 
 .nav-home-link {
-  display: block;
-  width: 50%;        
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
   background-color: #0d1b2a;
   color: white;
   border: none;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
-  border-radius: clamp(0.5rem, 5vw, 2.5rem);
   text-decoration: none;
-
+  
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem)clamp(1rem, 4vw, 2rem);
+  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  
+  /* make sure the icon scales nicely */
+  .nav-home-icon {
+    width: 1em;
+    height: 1em;
+  }
 }
-
-
-
 
 
 
