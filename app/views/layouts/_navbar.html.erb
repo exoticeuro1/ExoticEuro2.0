@@ -6,15 +6,20 @@
   <div class="nav-center">
   </div>
 
-  <div class="nav-right">
-    <a href="<%= root_path %>" class="nav-home-link">
-      <!-- either use an img… -->
-      <img src="home.svg" alt="Home" class="nav-home-icon">
-      <!-- …or drop the <img> and use background-image in the CSS instead -->
+<div class="nav-right">
+  <% if current_page?(root_path) %>
+    <%= link_to contact_path, class: "nav-home-link" do %>
+      <%= image_tag "contact.svg", alt: "Contact", class: "nav-home-icon" %>
+      <span class="nav-home-text">Contact</span>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "nav-home-link" do %>
+      <%= image_tag "home.svg", alt: "Home", class: "nav-home-icon" %>
       <span class="nav-home-text">Home</span>
-    </a>
+    <% end %>
+  <% end %>
+</div>
 
-  </div>
 </div>
      
 
