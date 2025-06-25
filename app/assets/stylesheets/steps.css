@@ -5,7 +5,8 @@
     padding-top: 36px;
     
     display: flex;
-    flex-direction: center;
+    flex-direction: column;    
+    justify-content: center;
     align-items: center;
 }
 
