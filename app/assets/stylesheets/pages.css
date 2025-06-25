@@ -1,17 +1,26 @@
 .side-page {
-    height: auto;
+    min-height: 100vh;
+    justify-content: space-between;
     width: 80vw;
     color: white;
+    
 }
 
 .side-page h1 {
-    font-size: 5em;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
     text-align: center;
     margin-top: 20px;
     
 }
 .side-page p {
-    font-size: 3em;
+    font-size: clamp(0.75rem, 5vw, 1.5rem);
     line-height: 1.5;
     margin: 20px 0;
+    text-align: center;
+}
+
+
+
+.side-page form {           /* the wrapper created by `button_to`   */
+  text-align: center;       /* centers its inline children           */
 }

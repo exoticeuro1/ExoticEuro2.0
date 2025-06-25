@@ -1,18 +1,92 @@
-          <div class = "contact-card">
-                <h2> <%= @user.location %></h2>
-                <div class = "contact-content">
-                    <div class = "left-side">
-                        <div class = "contact-info">
-                            <p> Phone: <%= @user.phone %></p>
-                            <p> Email: <%= @user.email %></p>
-                        </div>
-                        <div class = "work-hours">
-                            <h3>Work Hours</h3>
-                            <a>Mon - Fri: 9:00 AM - 6:00 PM</a><br>
-                            <a>Sat: 10:00 AM - 4:00 PM</a><br>
-                            <a>Sun: Closed</a>
-                        </div>
-                    </div>
-                    <div class = "location-map" style = "background-image: url('<%= Image.find_by(name: "location_image").url %>'); "></div>
-                </div>
-            </div>
+<div class="contact-card-card">
+  <div class="contact-content-box">
+    <div class="contact-info-box">
+      <h3>Contact Us</h3>
+      <a><strong>Address:</strong> <%= @user.location %></a><br>
+      <a><strong>Phone:</strong> <%= @user.phone %></a><br>
+      <a><strong>Email:</strong> <%= @user.email %></a><br>
+    </div>
+
+    <div class="work-hours-box">
+      <h3>Work Hours</h3>
+      <a>Mon - Fri: 9:00 AM - 6:00 PM</a><br>
+      <a>Sat: 10:00 AM - 4:00 PM</a><br>
+      <a>Sun: Closed</a>
+    </div>
+  </div>
+
+  <div class="location-box">
+    <%= link_to @user.location_link, target: "_blank", rel: "noopener" do %>
+      <%= image_tag Image.find_by(name: "location_image").url,
+                    alt: "Location Map",
+                    class: "location-image" %>
+    <% end %>
+    <h3>Find Us Here</h3>
+  </div>
+</div>
+
+<style>
+.contact-card-card {
+  width: 95%;
+  max-width: 1032px;
+  box-sizing: border-box;
+  min-height: 350px;
+  border-radius: 48px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #7195B5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-direction: row;
+}
+
+.contact-content-box {
+  flex: 2;
+}
+
+.location-box {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin:0;
+
+}
+
+.location-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  background-image: url("map.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.location-image:hover {
+  transform: scale(1.05);
+}
+
+.contact-info-box,
+.work-hours-box {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Mobile: stack columns vertically */
+@media (max-width: 768px) {
+  .contact-card-card {
+    flex-direction: column;
+  }
+  .contact-content-box,
+  .location-box {
+    width: 100%;
+    flex: none;
+    padding: 1rem;
+  }
+}
+</style>

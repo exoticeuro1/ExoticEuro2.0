@@ -1,7 +1,16 @@
+
+
 <div class = "side-page">
-
-    <h1> Policy </h1>
-
-    <p><%= @policy %></p>    
+    <div class = "space"></div>
+    <h1>Policy</h1>
+    <%= sanitize @policy, tags: %w(p br strong em ul ol li) %>  
 
 </div>
+
+<style>
+.space {
+    height: clamp(60px, 10vh, 120px);
+}
+</style>
+
+

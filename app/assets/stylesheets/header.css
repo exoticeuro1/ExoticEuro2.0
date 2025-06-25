@@ -1,6 +1,9 @@
 header {
     width: 100%;
-    height: 100vh;
+    height: 100lvh;      /* 100 % of the *largest* viewport */
+    min-height: 100svh;  /* but never smaller than the visible viewport */
+    padding-bottom: env(safe-area-inset-bottom); /* keep text above nav bar */
+   
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,24 +17,32 @@ header {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
+header .top {
+    max-width: 90%; /* Allows the title to wrap */
+    text-align: left;
+}
+
 header .top h1 {
-    font-size: 12rem;
+    font-size: clamp(6rem, 12vw, 11.25rem); /* Keeps it large */
+    line-height: 1.1;
     margin-top: 100px;
     padding: 0;
+    word-break: break-word; /* Optional, for long words */
+    text-wrap: balance; /* Optional for smarter wrapping (only in modern browsers) */
 }
+
 
 header .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    width: 90%;
     gap: 0.5rem; /* Space between the two links */
+    z-index: 4;
+    text-align: left;
+    
 }
 
-header .bottom a {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+header .bottom h1 {
+    font-size: clamp(3.5rem, 4vw, 5rem);
     color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }

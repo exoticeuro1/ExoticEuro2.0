@@ -6,12 +6,15 @@ module CarManager
         @new_car = Car.new(car_params)
         uploaded_file = params[:car][:image]
         unless uploaded_file
+            flash[:error] = "Please upload an image for the car."
             return false 
         end 
 
         if @new_car.save 
             
             if create_new_image(uploaded_file, @new_car.id)
+                @new_car.display_image = @new_car.images.first.id
+                @new_car.save
                 return true
             else
                 @new_car.destroy
@@ -45,6 +48,6 @@ module CarManager
 
     private 
     def car_params
-        params.permit(:car_make, :car_model, :price, :miles, :description, :link, images: [])
-      end
+        params.permit(:car_make, :car_model, :price, :compared_price, :year, :display_image, :miles, :description, :link, images: [])
+    end
 end 

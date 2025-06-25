@@ -1,0 +1,93 @@
+
+   .view{
+        height: 100vh;           
+        width: 100%;             
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+      
+    }
+
+
+
+
+    .image-gallery {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        height: 80%;  
+        padding: 20px;
+        min-width: 0; 
+    }
+
+    .main-image {
+    border-radius: 15px;
+    aspect-ratio: 16/9;              /* keep the same shape at any size           */
+    object-fit:cover; 
+    width: 100%;
+    height: 80%;
+    max-height: 450px;
+    object-fit: cover;
+    }
+
+    .thumbnails {
+    display: flex;
+     flex-wrap: wrap; 
+    gap: 10px;
+    margin-top: 10px;
+    
+    }
+
+    .thumbnail {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    }
+
+    .thumbnail.active {
+    border-color: #007BFF;
+    }
+
+
+.car-info-card {
+    padding: 20px;
+    width: 30%;
+    max-width: 415px;
+    height: 80%;
+    border-radius: 24px;
+    background-color: #0D1B2A;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.car-info-card h2 {
+    color: #E1E2E1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.car-info-card p {
+    color: #E1E2E1;
+    font-size: 1.6rem;
+    margin: 10px 0;
+}
+.car-info-card .btn {
+  margin-top: auto;
+  margin-bottom: 10px;         /* ← pushes it to the very bottom   */
+}
+.link-btn {
+    background: #E1E2E1;
+    color: #0D1B2A;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+

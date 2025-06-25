@@ -11,10 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "cars", force: :cascade do |t|
     t.string "car_model"
     t.decimal "price"
+    t.decimal "compared_price"
     t.integer "miles"
+    t.integer "year"
+    t.integer "display_image"
     t.string "car_make"
     t.text "description"
     t.string "link"
@@ -28,7 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "car_id"
+    t.bigint "car_id"
     t.index ["car_id"], name: "index_images_on_car_id"
   end
 
@@ -38,11 +44,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_144047) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
     t.text "bio"
     t.string "phone"
     t.string "display_email"
+    t.string "contact_email"
     t.string "location"
+    t.text "location_link"
     t.string "youtube"
     t.string "facebook"
     t.string "instagram"

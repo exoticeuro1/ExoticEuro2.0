@@ -1,17 +1,19 @@
+
+
+
 <div class="page">
     <%#-------------------------------------------- Header section --------------------------------------------%>
     <header style="background-image: url('<%= Image.find(1).url %>');">
         <div class="top">
-            <h1>Exotic Euro</h1>
+            
         </div>
         <div class="bottom">
-            <a>Luxury Made Affordable,</a>
-            <a>Just for You.</a>
+            <h1>Luxury Made Affordable.<br>
+            Just for You.</h1>
         </div>
     </header>
     <%#--------------------------------------------------------------------------------------------------------%>
 
-    <div class="gradient-overlay"></div>
 
     <%#-------------------------------------------- Steps section ---------------------------------------------%>
 
@@ -22,7 +24,7 @@
         </div>
         <div class = "step">
             <div class = "step-text">
-                <p>We discuss the the model of your car, and we discuss the initial budget.</p>
+                <p>We discuss the the model of your car, and the initial budget.</p>
             </div>
         </div>
         <div class = "step">
@@ -37,7 +39,7 @@
         </div>
         <div class = "step">
             <div class = "step-text">
-                <p>Our Team delivers the your dream car for the agreed budget. </p>
+                <p>Our Team delivers your dream car for the agreed budget. </p>
             </div>
         </div>
         <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
@@ -115,34 +117,44 @@
     <%#--------------------------------------------------------------------------------------------------------%>
 
     <%#-------------------------------------------- Featured section ---------------------------------------------%>
-    <div class = "featured-section">
+    <div class = "car-section">
             <div class = "section-header" > 
                 <h1> Ready-to-Go Deals </h1>
                 <a> Check out our collection of existing ehicles.</a>
             </div>
 
-            <% if @feature.present?%>
-                <h2> Featured:</h2>
-                
-                <div class = "featured-car" style = "background-image: url('<%= @feature.url %>');">
-                    <div class = "text-gradiant"></div>
+            <% if @cars.present?%>
+                <div class = "car-grid">
+                    <% @cars.each do |car| %>
+                        <div class="card">
+                            <div class="card_image"><%= image_tag(car.images.find_by(id: car.display_image)&.url,alt: 'Car Image') %>
+                                <div class = "shadow"></div>
+                            </div>
 
-                    <div class = "featured-text-content">
-                        <h2> <%= @car.car_make%> <%= @car.car_model%></h2>
-                        <div class = "featured-details">
-                            <p> <%= number_to_currency(@car.price)%></p>
-                            <div class = "featured-details-cta">
-                                <%= link_to 'Details', car_path(car_id: @car.id), style: "color: white; text-decoration: none;" %>
+                            <div class="card_content">
+                                <h2 class = "card_title" > <%= car.car_make %> <%= car.car_model %> </h2>
+                                <div class = "car_info">
+                                    <h3 class = "price" > <%=number_to_currency(car.price)%> </h3> 
+                                    <div class = "info-box">
+                                        <% if car.compared_price.present? %>
+                                            <% different = car.compared_price - car.price %>
+                                            <p> <%= number_to_currency(different) %> Below Market Value </p>
+                                        <% end %>
+                                        <p>  <%=number_with_delimiter(car.miles, delimiter: ',')  %> mi </p>
+                                    </div>
+                                </div>
+                                <%= button_to "More", car_path(car_id: car.id), method: :get, class: "show-btn"%>
+                                
                             </div>
                         </div>
-                    </div>
+                    <% end %>
                 </div>
             <% else %>
-                <p> Currently, we do not have any vichles available. </p>    
+                <div class = "no-cars">
+                    <p> We're fresh out of vehicles right now! </p>
+                    <p> Check back soon — new deals are always on the way. </p>    
+                </div>
             <% end %>
-        <%= link_to cars_path, class: "view-featured" do %>
-            View More
-        <% end %>
 
     </div>
 

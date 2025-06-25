@@ -10,35 +10,57 @@
 
 
 @admin = User.create!(
-    email: "tori@gmail.com",
-    password: "password",
-    display_email: "eurodealz@gmail.com",
-    name: "Tori",
-    bio: "I repair cars",
-    phone: "1234567890",
-    youtube: "https://www.youtube.com/user/torim",
-    facebook: "https://www.facebook.com/torim",
-    instagram: "https://www.instagram.com/torim",
-    policy: "I am a car repair expert with over 10 years of experience. I have worked on various car models and brands, and I am passionate about helping people keep their cars in top condition. I am also a certified mechanic and have completed several training programs to stay updated with the latest technologies in the automotive industry."
+  email: "exoticeuro1@gmail.com",
+  password: "password",
+  
+  display_email: "eurodealz@gmail.com",
+  contact_email: "exoticeuro1@gmail.com",
+  
+  phone: "(901)-321-1234",
+  
+  location: nil,
+  location_link: nil,
+  
+  youtube: nil,
+  facebook: nil,
+  instagram: nil,
+
+  bio: <<~HTML.chomp,
+    <p>We’re a small, independent shop that buys repair-worthy luxury cars, restores them in-house, and sells them at a fixed price.</p>
+
+    <p>Founded in 2019 by three longtime technicians, we focus on mechanical integrity and transparent costs.</p>
+
+    <p>Every car gets a full inspection, an itemized repair plan, and a documented parts list that you review before committing.</p>
+
+    <p>Because we own each vehicle during the rebuild and do the work under one roof, there are no broker fees or surprise mark-ups.</p>
+
+    <p>The result: a luxury car that drives the way it should, priced only for the work that went into it—nothing more, nothing less.</p>
+  HTML
+ 
+  policy: <<~HTML.chomp,
+    <p><strong>Scope&nbsp;of&nbsp;Service.</strong> We purchase, restore, and resell used luxury vehicles. Our responsibility ends once the completed vehicle is delivered and signed for by the customer.</p>
+
+    <p><strong>Estimates &amp; Pricing.</strong> All written estimates include parts, labor, and taxes. The quoted total will not change unless the customer approves a revised work order in writing.</p>
+
+    <p><strong>Payment Terms.</strong> A 50&nbsp;% non-refundable deposit starts the project; the balance is due on delivery. We accept major credit cards, cashier’s checks, or ACH transfers.</p>
+
+    <p><strong>Warranty.</strong> Completed vehicles carry a 12-month / 12,000-mile limited warranty on parts and labor performed by our shop. Normal wear items and customer-supplied components are excluded.</p>
+
+    <p><strong>Customer Responsibilities.</strong> The customer must secure insurance before taking possession and must follow the manufacturer’s maintenance schedule. Failure to do so voids the warranty.</p>
+
+    <p><strong>Limitation of Liability.</strong> Our maximum liability is limited to the amount paid for the work described in the signed estimate. We are not liable for indirect, incidental, or consequential damages.</p>
+
+    <p><strong>Governing Law.</strong> This agreement is governed by the laws of the State of Tennessee. Any disputes will be resolved in the courts of Shelby County.</p>
+  HTML
 )
+
 puts "Admin user created"
-
-@car = Car.create!(
-    car_model: "Camry",
-    description: "A reliable and fuel-efficient sedan.",
-    price: 20000,
-    miles: 30000,
-    car_make: "Toyota",
-    link: "https://www.toyota.com/camry/",
-)
-
-puts "Cars Created: #{Car.count}"
 
 herobanner_image = Image.create!(
   name: "landing_car",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
 )
-puts "Hero Banner Image: #{Image.count}"  
+puts "Hero Banner Image Created"  
 
 no_image = Image.create!(
   name: "no_image",
@@ -50,8 +72,9 @@ location_image = Image.create!(
   name: "location_image",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/location.png",
 )
+puts "Location Image Created"
 
-  before_car_one = Image.create!(
+before_car_one = Image.create!(
   name: "before_car_one",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_damaged.jpg",
 )
@@ -75,6 +98,7 @@ before_car_five = Image.create!(
   name: "before_car_five",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_damaged.jpg",
 )
+puts "Before Images Created"
 
 after_car_one = Image.create!(
   name: "after_car_one",
@@ -96,4 +120,4 @@ after_car_five = Image.create!(
   name: "after_car_five",
   url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_fixed.jpg",
 )
-puts "Before and After Images Created: #{Image.where.not(id: 1).count}"
+puts "After Images Created"

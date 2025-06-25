@@ -1,20 +1,30 @@
-<div class="contact-card" style = "height: 250px">
-  <div class="contact-content" style="display: flex; align-items: center; justify-content: center; ">
+<div class="contact-card">
+  <div class="contact-content">
     <div class="left-side">
       <div class="contact-info">
-      
-        <h3><%= @user.name %></h3>
-        <p>Phone: <%= @user.phone %></p>
-        <p>Email: <%= @user.email %></p>
+        <h3> Contact Info</h3>
+        <a>Phone: <%= @user.phone %></a><br>
+        <a>Email: <%= @user.email %></a>
       </div>
     </div>
-    
+
     <div class="work-hours">
-      <h3>Work Hours</h3>
-      <a>Mon - Fri: 9:00 AM - 6:00 PM</a><br>
-      <a>Sat: 10:00 AM - 4:00 PM</a><br>
-      <a>Sun: Closed</a>
+      <div class="hours-info">
+        <h3>Work Hours</h3>
+        <a>Mon - Fri: 9:00 AM - 6:00 PM</a><br>
+        <a>Sat: 10:00 AM - 4:00 PM</a><br>
+        <a>Sun: Closed</a>
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 420px) {
+    .contact-card {
+      width: 80%;
+    }
+
+  }
+</style>
 

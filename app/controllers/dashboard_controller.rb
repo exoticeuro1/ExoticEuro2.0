@@ -49,6 +49,18 @@ class DashboardController < ApplicationController
         end
     end
 
+    def set_default_img
+        @car = Car.find(params[:car_id])
+        @image = Image.find(params[:image_id])
+        if @car.update(display_image: @image.id)
+            flash[:notice] = "Default image set successfully."
+            redirect_to edit_car_path(car_id: @car.id)
+        else
+            flash[:alert] = @car.errors.full_messages.to_sentence
+            redirect_to edit_car_path(car_id: @car.id)
+        end
+    end
+    
     def delete_car
         if delete_selected_car
             flash[:notice] = "Car deleted successfully."

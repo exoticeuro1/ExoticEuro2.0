@@ -1,0 +1,10 @@
+<h2>New submission</h2>
+
+<ul>
+  <li><b>Name:</b>  <%= @name %></li>
+  <li><b>Phone:</b> <%= @phone.presence || "—" %></li>
+  <li><b>Email:</b> <%= @email %></li>
+</ul>
+
+<p><b>Message:</b></p>
+<p><%= simple_format @message %></p>

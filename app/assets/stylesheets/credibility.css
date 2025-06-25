@@ -2,19 +2,26 @@
     width: 95%;
     margin-top: 50px;
     color: white;
+    height: auto;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
 .testimony-section {
     width: 80%;
-    margin: 32px auto;
+    margin: 32px;
     color: #fff;
     position: relative;
+    align-self: center;
     font-size: 1.2rem;
     padding: 20px;
     border-radius: 8px;
-    overflow: hidden;
-    min-height: 80px;
+    height: 120px;
+
 }
 
 .testimony-outer {
@@ -25,9 +32,11 @@
     position: absolute; /* back to absolute so overlapping works */
     top: 0;
     left: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none; /* Prevent clicks on hidden ones */
+
 }
   
 .testimony-outer.active {
@@ -47,32 +56,18 @@
     padding: 10px;
 }
 
-.testimony-image {
-    width: 80px;
-    height: 80px;
-    background-color: gray;
-    border-radius: 50%;
-    flex-shrink: 0; 
-    background-image: url("icon.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-.testimony-text{
-    text-align: left;
-}
 
 .testimony h3{
-    font-size: 1rem;
-    margin-bottom: 0; 
-    padding-bottom: 0; 
+    font-size: 1rem; 
+    text-align: center;
 }
 
 .testimony a{
     font-size: 1.4rem;
     margin-top: 0; 
     padding-top: 0; 
+    text-align: left;
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
@@ -140,53 +135,43 @@
 
 
 .car1{
-    background-image: url("car1_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 1) * -1);
 }
 
 .car2{
-    background-image: url("car2_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 2) * -1);
 }
 
 .car3{
-    background-image: url("car3_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 3) * -1);
 }
 
 .car4{
-    background-image: url("car4_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 4) * -1);
 }
 
 .car5{
-    background-image: url("car5_damaged.jpg");
     animation-delay: calc(20s / 5 * (5 - 5) * -1);
 }
 
 /*  After carousel*/
 .car1-mirror{
-    background-image: url("car1_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 1) * -1);
 }
 
 .car2-mirror{
-    background-image: url("car2_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 2) * -1);
 }
 
 .car3-mirror{
-    background-image: url("car3_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 3) * -1);
 }
 
 .car4-mirror{
-    background-image: url("car4_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 4) * -1);
 }
 
 .car5-mirror{
-    background-image: url("car5_fixed.jpg");
     animation-delay: calc(20s / 5 * (5 - 5) * -1);
 }
 
@@ -245,10 +230,52 @@
 }
 
 @media (max-width: 420px) {
+
+
 .car-dmg {
-    left: 400%;
+    left: 250%;
 }
 .car-fix {
-    right: 400%;
+    right: 250%;
 }
+}
+
+@media(max-width: 420px) {  
+    .testimony-section{
+        width: 90%;
+        margin: 10px;
+        min-height: 155px;
+    }
+    .testimony-text h3{
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+    }
+    .testimony-text a{
+        font-size: 1.2rem;
+
+    }
+    .testimony {
+        flex-direction: column;
+        align-items: center; 
+        width: 90%;
+    }
+    
+    .before-carousel, .after-carousel{
+        width: 90%;
+        height: 130px;
+
+    }
+
+    .before-car-slide, .after-car-slide{
+        height: 130px;
+    }
+    .car-dmg,
+    .car-fix {
+        height: 120px;
+        width: 200px;
+    }
+    
 }
