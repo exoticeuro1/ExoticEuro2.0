@@ -18,6 +18,7 @@
     flex-direction: column;
     justify-content: center;
     overflow-x: hidden;
+    scrollbar-width: 0;
 }
 
 .space {
