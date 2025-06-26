@@ -4,7 +4,11 @@
   
     <div class = "contact-page">
         <h3> Give us a call </h3>
-        <a> <%= @phone %> </a>
+
+     <%= link_to "tel:#{@phone}", class: "nav-home-link" do %>
+  <%= image_tag "phone.svg", alt: "Call us", class: "nav-home-icon" %>
+  <span class="nav-home-text"><%= @phone %></span>
+<% end %>
          <h3> Or send us an email </h3>
     </div>
 
@@ -52,6 +56,31 @@
 </div>
 
 <style>
+
+
+.nav-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  background-color: #0D1B2A;
+  color: white;
+  border: none;
+  text-decoration: none;
+  
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem)clamp(1rem, 4vw, 2rem);
+  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  
+  /* make sure the icon scales nicely */
+  .nav-home-icon {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+
 
 /* Container */
 .contact-form {

@@ -1,3 +1,7 @@
+<% if current_page?(root_path) %>
+
+<% else %>
+
 <div class="navbar-section">
   <div class="nav-left">
     <%= link_to "ExoticEuro", root_path, class: "navbar-link" %>
@@ -7,19 +11,13 @@
   </div>
 
 <div class="nav-right">
-  <% if current_page?(root_path) %>
-    <%= link_to contact_path, class: "nav-home-link" do %>
-      <%= image_tag "contact.svg", alt: "Contact", class: "nav-home-icon" %>
-      <span class="nav-home-text">Contact</span>
-    <% end %>
-  <% else %>
-    <%= link_to root_path, class: "nav-home-link" do %>
-      <%= image_tag "home.svg", alt: "Home", class: "nav-home-icon" %>
-      <span class="nav-home-text">Home</span>
-    <% end %>
+  <%= link_to root_path, class: "nav-home-link" do %>
+    <%= image_tag "home.svg", alt: "Home", class: "nav-home-icon" %>
+    <span class="nav-home-text">Home</span>
   <% end %>
-</div>
 
+</div>
+  <% end %>
 </div>
      
 
@@ -75,7 +73,7 @@
   justify-content: center;
   gap: 0.5rem;
   
-  background-color: #0d1b2a;
+  background-color: #0D1B2A;
   color: white;
   border: none;
   text-decoration: none;

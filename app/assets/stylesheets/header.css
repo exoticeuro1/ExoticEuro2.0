@@ -11,38 +11,47 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    align-items: center;
-    text-align: center;
     color: white;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
-
-header .top {
-    max-width: 90%; /* Allows the title to wrap */
-    text-align: left;
+/* 1) Fluid font‐sizes that respond to BOTH width and height */
+.site-title {
+  /* never smaller than 6rem, never bigger than 18rem,
+     but otherwise driven by the smaller of 12vw or 20vh */
+  font-size: clamp(
+    8rem,
+    min(19vw, 20vh),
+    25rem
+  );
+  line-height: 1.1;
+  text-align: center;
 }
 
-header .top h1 {
-    font-size: clamp(6rem, 12vw, 11.25rem); /* Keeps it large */
-    line-height: 1.1;
-    margin-top: 100px;
-    padding: 0;
-    word-break: break-word; /* Optional, for long words */
-    text-wrap: balance; /* Optional for smarter wrapping (only in modern browsers) */
+header .bottom h1 {
+  /* tagline scales from 2.5rem up to 4.5rem,
+     driven by whichever is smaller: 5vw or 10vh */
+  font-size: clamp(
+    2.5rem,
+    min(5vw, 10vh),
+    4.5rem
+  );
+  line-height: 1.2;
 }
 
 
 header .bottom {
-    width: 90%;
-    gap: 0.5rem; /* Space between the two links */
-    z-index: 4;
-    text-align: left;
-    
+  /* pull the tagline up a bit when the viewport is tall */
+  margin-bottom: clamp(1rem, 10vh, 15rem);
+  text-align: center;
+  
 }
 
-header .bottom h1 {
-    font-size: clamp(3.5rem, 4vw, 5rem);
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* 3) Break “Exotic/Euro” and your tagline into separate lines
+      when EITHER width is ≤780px OR height is ≤500px */
+@media (max-width: 1000px), (max-height: 500px) {
+  .site-title .break-at-mobile,
+  .break-line {
+    display: block;
+    margin-top: 0.2em; /* a touch of breathing room */
+  }
 }
