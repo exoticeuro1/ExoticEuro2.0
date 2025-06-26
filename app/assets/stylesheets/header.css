@@ -19,8 +19,8 @@ header {
   /* never smaller than 6rem, never bigger than 18rem,
      but otherwise driven by the smaller of 12vw or 20vh */
   font-size: clamp(
-    8rem,
-    min(19vw, 20vh),
+    7rem,
+    min(16vw, 20vh),
     25rem
   );
   line-height: 1.1;
