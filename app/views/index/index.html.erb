@@ -10,10 +10,10 @@
     </h1>
   </div>
   <div class="bottom">
-    <h1>
+    <p>
       <span class="break-line">Luxury Made Affordable.</span>
       <span class="break-line">Just for You.</span>
-    </h1>
+    </p>
   </div>
 </header>
 
@@ -22,7 +22,7 @@
 
     <%#-------------------------------------------- Steps section ---------------------------------------------%>
 
-    <div class = "step-by-step">
+    <section class = "step-by-step">
         <div class = "section-header">
             <h1>Step by Step Process</h1>
             <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
@@ -50,13 +50,13 @@
         <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
             
       
-    </div>
+    </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>
 
 
     <%#-------------------------------------------- Contact section ---------------------------------------------%>
-    <div class = "contact-section">
+    <section class = "contact-section">
         <div class = "section-header">
             <h1> Where to Find Us</h1>
             <a>Stop by, give us a call, or send a message — we're here to help.</a>
@@ -67,14 +67,14 @@
         <% else %>
            <%=  render partial: 'index/contact/contact_card', locals: { location: @user.location }%>
         <% end %>
-    </div>
+    </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>
 
 
 
     <%#--------------------------------------------- Credibility Section -------------------------------------%>
-        <div class = "credibility-section">
+        <section class = "credibility-section">
             <div class = "section-header">
                 <h1> What our clients say</h1>
                 <a> We are proud of our work and our clients.</a>
@@ -117,12 +117,12 @@
                     <div class="car-fix car5-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_five").url %>'); "></div>
                 </div>
             </div>
-        </div>
+        </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>
 
     <%#-------------------------------------------- Featured section ---------------------------------------------%>
-    <div class = "car-section">
+    <section class = "car-section">
             <div class = "section-header" > 
                 <h1> Ready-to-Go Deals </h1>
                 <a> Check out our collection of existing ehicles.</a>
@@ -164,7 +164,7 @@
                 </div>
             <% end %>
 
-    </div>
+    </section>
 
         <%#--------------------------------------------------------------------------------------------------------%>
 </div>

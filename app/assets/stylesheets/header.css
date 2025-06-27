@@ -27,7 +27,7 @@ header {
   text-align: center;
 }
 
-header .bottom h1 {
+header .bottom p {
   /* tagline scales from 2.5rem up to 4.5rem,
      driven by whichever is smaller: 5vw or 10vh */
   font-size: clamp(

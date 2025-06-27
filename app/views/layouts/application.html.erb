@@ -8,6 +8,19 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="description"
+      content="<%= content_for(:meta_description) || 'Exotic Euro offers affordable, factory-spec repairs and turnkey deals on luxury European cars. Book your consultation today!' %>">
+    <!-- Default robots: index & follow -->
+    <meta name="robots"
+          content="<%= content_for?(:meta_robots) ? yield(:meta_robots) : 'index,follow' %>">
+
+    <!-- Default canonical: self-referencing -->
+    <link rel="canonical"
+          href="<%= content_for?(:canonical_url) ?
+                    yield(:canonical_url) :
+                    (request.base_url + request.path) %>">
+
+    <%= render 'layouts/local_business' %>
 
     <%= yield :head %>
 
