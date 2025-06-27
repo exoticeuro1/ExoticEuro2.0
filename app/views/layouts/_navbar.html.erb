@@ -1,5 +1,8 @@
-<% if current_page?(root_path) %>
-
+<% if current_page?(root_path) ||
+      current_page?(new_user_session_path) ||
+      current_page?(new_user_registration_path) ||
+      current_page?(new_user_password_path) %>
+  
 <% else %>
 
 <div class="navbar-section">
