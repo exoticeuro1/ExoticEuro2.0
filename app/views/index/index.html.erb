@@ -158,14 +158,9 @@
                 <div class = "no-cars">
                 
                     <p> We're fresh out of vehicles right now! </p>
-                   
-                    <%= form_with(url: nil, method: :post, html: { class: "notify-form" }) do |form| %>
-                    <%= form.label :email, "Get Notified When New Cars Arrive:", class: "notify-form-label" %>
-                    <div class = "group">    
-                        <%= form.email_field :email, placeholder: "Enter your email", required: true, class: "notify-form-input" %>
-                        <%= form.submit "Notify Me", class: "notify-form-btn" %>
-                    </div>
-                    <% end %>
+
+                    <p class = "notify-form-label" > Check on us later when New Cars Arrive. </p>
+                  
                 </div>
             <% end %>
 
