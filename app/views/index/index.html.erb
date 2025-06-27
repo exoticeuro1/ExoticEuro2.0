@@ -172,19 +172,41 @@
 
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const testimonials = document.querySelectorAll(".testimony-outer");
-    if (testimonials.length === 0) return; // Prevent error if selector is wrong
+<style>
+.testimony-outer {
+  position: absolute;
+  width: 100%; height: 100%;
+  opacity: 0;
+  
+  /* 1) Make the whole cycle 20s (4 × 5s), repeat forever */
+  /* 2) Apply ease-in-out to the animation */
+  animation: fade 20s infinite ease-in-out;
+}
 
-    let index = 0;
+/* stagger each testimonial by 5s */
+.testimony-outer:nth-child(1) { animation-delay: 0s;  }
+.testimony-outer:nth-child(2) { animation-delay: 5s;  }
+.testimony-outer:nth-child(3) { animation-delay: 10s; }
+.testimony-outer:nth-child(4) { animation-delay: 15s; }
 
-    setInterval(() => {
-      testimonials[index].classList.remove("active");
-      index = (index + 1) % testimonials.length;
-      testimonials[index].classList.add("active");
-    }, 5000);
-  });
-</script>
+/* Keyframes: 
+   – 0%→20% = showing (with fade-in at 0→4%, hold until 20%)  
+   – 20%→25% = fade-out  
+   – 25%→100% = hidden until next cycle
+*/
+@keyframes fade {
+  /* start fully transparent */
+  0%   { opacity: 0; }
+  /* fade in to full opacity over 4% of the cycle (0.8s) */
+  4%   { opacity: 1; }
+  /* stay fully visible until 20% of the cycle (4s) */
+  20%  { opacity: 1; }
+  /* fade out over the next 5% (1s) */
+  25%  { opacity: 0; }
+  /* remain hidden until the very end of the cycle */
+  100% { opacity: 0; }
+}
+
+</style>
 
 

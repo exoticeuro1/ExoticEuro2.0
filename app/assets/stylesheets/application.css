@@ -227,18 +227,53 @@ form input[type="submit"]:hover {
 
 /* ------------------------------------------------------------------------------------------------- */
 .flash-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    max-width: 80%;
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-weight: bold;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0); /* start as a 0-width line at center */
+  transform-origin: center center;       /* grow/shrink from the middle */
+  
+  z-index: 1000;
+  max-width: 80%;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 24px;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  
+  /* 
+    1) expand over 0.5s (ease-out), 
+    2) stay open for 3s,
+    3) collapse over 0.5s (ease-in)
+  */
+  animation:
+    expand 0.5s ease-out forwards,
+    collapse 0.5s ease-in forwards 2s;
+}
+
+@keyframes expand {
+  from {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
   }
+  to {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes collapse {
+  from {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+  }
+}
+
   
   .flash-message.notice {
     background-color: #d4edda;
