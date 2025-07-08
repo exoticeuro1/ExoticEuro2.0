@@ -1,57 +1,45 @@
 header {
-    width: 100%;
-    height: 100lvh;      /* 100 % of the *largest* viewport */
-    min-height: 100svh;  /* but never smaller than the visible viewport */
-    padding-bottom: env(safe-area-inset-bottom); /* keep text above nav bar */
-   
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: "Baskerville", serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100lvh;       
+  min-height: 100svh;  
+  padding-bottom: env(safe-area-inset-bottom);  
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Baskerville", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
-/* 1) Fluid font‐sizes that respond to BOTH width and height */
+
 .site-title {
-  /* never smaller than 6rem, never bigger than 18rem,
-     but otherwise driven by the smaller of 12vw or 20vh */
-  font-size: clamp(
-    7rem,
-    min(16vw, 20vh),
-    25rem
-  );
-  line-height: 1.1;
-  text-align: center;
+  font-size: clamp(3rem, min(25vw, 30vh), 16rem);
+  margin: 0;
+  text-align: left;
+}
+
+header .bottom {
+  margin-bottom: clamp(1rem, 10vh, 15rem);
+  text-align: left;
+  margin-left: clamp(1rem, 5vw, 5rem);
+  bottom: 0;
 }
 
 header .bottom p {
-  /* tagline scales from 2.5rem up to 4.5rem,
-     driven by whichever is smaller: 5vw or 10vh */
-  font-size: clamp(
-    2.5rem,
-    min(5vw, 10vh),
-    4.5rem
-  );
-  line-height: 1.2;
+  font-size: clamp(2.5rem, min(5vw, 10vh), 3.5rem);
+  margin: 0;
+  padding: 0;
 }
 
 
-header .bottom {
-  /* pull the tagline up a bit when the viewport is tall */
-  margin-bottom: clamp(1rem, 10vh, 15rem);
-  text-align: center;
-  
-}
 
-/* 3) Break “Exotic/Euro” and your tagline into separate lines
-      when EITHER width is ≤780px OR height is ≤500px */
+
 @media (max-width: 1000px), (max-height: 500px) {
   .site-title .break-at-mobile,
   .break-line {
     display: block;
-    margin-top: 0.2em; /* a touch of breathing room */
   }
 }
