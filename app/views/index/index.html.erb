@@ -1,4 +1,27 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const steps = document.querySelectorAll('.step');
 
+  // build thresholds [0, 0.01, 0.02, …, 1]
+  const thresholds = Array.from({length: 101}, (_, i) => i / 100);
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // entry.intersectionRatio is 0→1
+      const ratio = entry.intersectionRatio;
+      // map that to a scale: e.g. from 0.8 → 1
+      const scale = 0.8 + 0.2 * ratio;
+      entry.target.style.transform = `scale(${scale})`;
+    });
+  }, { threshold: thresholds });
+
+  steps.forEach(step => {
+    // ensure transform-origin is center
+    step.style.transformOrigin = 'center center';
+    obs.observe(step);
+  });
+});
+</script>
 
 
 <div class="page">

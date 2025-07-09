@@ -56,3 +56,10 @@
     text-decoration: none;
     font-size: 1.5rem;
 }
+
+
+.step {
+  /* remove any static transform from earlier examples */
+  transform: scale(0.8);  
+  transition: transform 0.1s linear; /* smooth out updates */
+}
