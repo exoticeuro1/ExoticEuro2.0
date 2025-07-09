@@ -61,5 +61,6 @@
 .step {
   /* remove any static transform from earlier examples */
   transform: scale(0.8);  
-  transition: transform 0.1s linear; /* smooth out updates */
+  transition: transform 0.2s linear; /* smooth out updates */
+  
 }
