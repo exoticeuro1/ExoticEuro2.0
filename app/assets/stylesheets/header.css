@@ -15,8 +15,8 @@ header {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.site-title {
-  font-size: clamp(3rem, min(25vw, 30vh), 16rem);
+.site-title {  
+  font-size: clamp(4rem,min(30vw, 20vh),10rem);
   margin: 0;
   text-align: left;
 }
