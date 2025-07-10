@@ -15,11 +15,6 @@ header {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.site-title {  
-  font-size: clamp(4rem,min(30vw, 20vh),10rem);
-  margin: 0;
-  text-align: left;
-}
 
 header .bottom {
   margin-bottom: clamp(1rem, 10vh, 15rem);
@@ -37,9 +32,43 @@ header .bottom p {
 
 
 
-@media (max-width: 1000px), (max-height: 500px) {
+@media (max-width: 800px), (max-height: 500px) {
   .site-title .break-at-mobile,
   .break-line {
     display: block;
+  }
+}
+
+
+:root {
+  --title-min: 2rem;       /* absolute smallest */
+  --title-max: 15rem;       /* absolute largest */
+  --title-vw: 80vw;        /* up to 80% of viewport width */
+  --title-vh: 30vh;        /* up to 30% of viewport height */
+}
+
+/* base fluid scaling */
+.site-title {
+  display: inline-block;               /* make max-width honor wrapping */
+  max-width: var(--title-vw);          /* never wider than 80% of vw */
+  font-size: clamp(
+    var(--title-min),
+    min(var(--title-vw), var(--title-vh)),
+    var(--title-max)
+  );
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+/* small-screen override */
+@media (max-width: 900px) {
+  .site-title {
+    /* on tiny phones, shrink the min & max and use a tighter fluid curve */
+    max-width: 90vw;
+    font-size: clamp(
+      1.5rem,
+      min(90vw, 20vh),
+      8rem
+    );
   }
 }
