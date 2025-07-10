@@ -42,7 +42,7 @@ header .bottom p {
 
 :root {
   --title-min: 2rem;       /* absolute smallest */
-  --title-max: 15rem;       /* absolute largest */
+  --title-max: 10rem;       /* absolute largest */
   --title-vw: 80vw;        /* up to 80% of viewport width */
   --title-vh: 30vh;        /* up to 30% of viewport height */
 }
@@ -68,7 +68,7 @@ header .bottom p {
     font-size: clamp(
       1.5rem,
       min(90vw, 20vh),
-      8rem
+      6rem
     );
   }
 }
