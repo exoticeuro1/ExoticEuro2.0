@@ -85,6 +85,8 @@ footer{
     font-size: 3rem;
     margin: 0;
     padding: 0;
+    
+  font-family: 'Bruno Ace', sans-serif;
 }
 
 .social-media {
@@ -345,10 +347,12 @@ form input[type="submit"]:hover {
     .bottom-footer-section {
         margin: 10px;
         text-align: center;
+        
     }
 
     .top-footer-section h2{
         font-size: 3rem; /* slightly smaller heading if you want */
+        
     }
     .middle-footer-section h3{
         margin: 0;
