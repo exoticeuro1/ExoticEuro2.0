@@ -76,7 +76,7 @@ header .bottom p {
     font-size: clamp(
       1.5rem,
       min(90vw, 20vh),
-      6rem
+      5rem
     );
   }
 }
