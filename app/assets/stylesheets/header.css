@@ -75,7 +75,7 @@ header .bottom p {
     max-width: 90vw;
     font-size: clamp(
       1.5rem,
-      min(90vw, 20vh),
+      min(80vw, 20vh),
       5rem
     );
   }
