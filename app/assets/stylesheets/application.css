@@ -72,7 +72,7 @@ footer{
 
 footer{
   height: auto;
-  padding: 20px;
+  padding-top: 20px;
 }
 .top-footer-section {
     display: flex;
