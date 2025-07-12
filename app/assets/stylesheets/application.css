@@ -72,6 +72,7 @@ footer{
 
 footer{
   height: auto;
+  padding: 20px;
 }
 .top-footer-section {
     display: flex;
@@ -128,7 +129,7 @@ footer{
     font-size : 1.2rem;
     font-style: italic;
     margin: 10px;
-
+    height: 30px;
 }
 
 .bottom-footer-section{
