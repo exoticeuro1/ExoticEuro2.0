@@ -1,30 +1,19 @@
-<div class="contact-card">
-  <div class="contact-content">
-    <div class="left-side">
-      <div class="contact-info">
-        <h3> Contact Info</h3>
-        <a>Phone: <%= @user.phone %></a><br>
-        <a>Email: <%= @user.email %></a>
-      </div>
-    </div>
+ <div class="contact-options">
+  <%= link_to "tel:#{User.find(1).phone}", class: "option-link" do %>
+    <%= image_tag "phone.svg", alt: "Call us", class: "option-icon" %>
+    <span class="contact-text">
+      <span class="prefix">Call us at </span>
+      <span class="value"><%= User.find(1).phone %></span>
+    </span>
+  <% end %>
 
-    <div class="work-hours">
-      <div class="hours-info">
-        <h3>Work Hours</h3>
-        <a>Mon - Fri: 9:00 AM - 6:00 PM</a><br>
-        <a>Sat: 10:00 AM - 4:00 PM</a><br>
-        <a>Sun: Closed</a>
-      </div>
-    </div>
-  </div>
+  <%= link_to "mailto:#{User.find(1).contact_email}", class: "option-link" do %>
+    <%= image_tag "email.svg", alt: "Email us", class: "option-icon" %>
+    <span class="contact-text">
+      <span class="prefix">Email us at </span>
+      <span class="value"><%= User.find(1).contact_email %></span>
+    </span>
+  <% end %>
+
+  <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
 </div>
-
-<style>
-  @media (max-width: 420px) {
-    .contact-card {
-      width: 95%;
-    }
-
-  }
-</style>
-

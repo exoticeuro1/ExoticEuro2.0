@@ -1,13 +1,30 @@
 <div class = "view">
-    <section class = "about">  
-        <div class = "about-gradient" style =  "background: linear-gradient(180deg, #0166B1 0%, #2756A2 28.37%, #214989 51.92%, #1E427C 68.27%, #1B3B6F 86.06%);"></div>
-        <div class = "our-story">
-            <div class = "story-content">
-                <h1>Our Story</h1>
-                <p> Our founder started repairing cars in 1998 for family and friends, quickly developing a cost-effective way to source quality parts. With an electrical engineering background, he mastered complex systems in both American and foreign vehicles. After years of hands-on experience, he co-founded a dealership in 2020 and launched Exotic Euro in 2025 to bring his passion for high-end car restoration to the next level. </p>    
-            </div>    
-        </div>        
-        <div class = "about-gradient"></div>
+    <section class = "contact">  
+        <div class = "section-header">
+            <h1> Upgrade Your Ride Today</h1>
+            <a>Simply fill out our quick online booking form below and we’ll take care of the rest. </a>
+        </div>
+        
+      <div class="contact-options">
+  <%= link_to "tel:#{User.find(1).phone}", class: "option-link" do %>
+    <%= image_tag "phone.svg", alt: "Call us", class: "option-icon" %>
+    <span class="contact-text">
+      <span class="prefix">Call us at </span>
+      <span class="value"><%= User.find(1).phone %></span>
+    </span>
+  <% end %>
+
+  <%= link_to "mailto:#{User.find(1).contact_email}", class: "option-link" do %>
+    <%= image_tag "email.svg", alt: "Email us", class: "option-icon" %>
+    <span class="contact-text">
+      <span class="prefix">Email us at </span>
+      <span class="value"><%= User.find(1).contact_email %></span>
+    </span>
+  <% end %>
+
+  <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
+</div>
+
     </section>
         
 
@@ -24,48 +41,52 @@
         overflow: hidden;
     }
 
-    .about{ 
+    .contact{
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-    }
-
-    .about-gradient {
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(0deg, #0166B1 0%, #2756A2 28.37%, #214989 51.92%, #1E427C 68.27%, #1B3B6F 86.06%);
-        margin-bottom: -10px;
-        margin-top: -10px;
-    }
-    .our-story {
-        width: 100%;
-        min-height: 400px;
-        display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #1b3b6f;
-    }
-
-    .story-content {
-        max-width: 800px;
-        padding: 20px;
-        color: white;
+        color: #e1e2e1;
         text-align: center;
-        font-family: 'Source Serif Pro', serif;
     }
 
-    .story-content h1 {
-        font-size: clamp(2.25rem, 5vw, 4.5rem);
-        margin-bottom: 10px;
-        padding-bottom: 0;
-    }
+  .option-link {
+    margin: 1rem;
 
-    .story-content p {
-        font-size: clamp(1.4rem, 3vw, 1.8rem);
-    }
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
+  
+  color: white;
+  border: none;
+  text-decoration: none;
+  
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  
+  padding: clamp(0.5rem, 2vw, .6rem)clamp(1rem, 4vw, 1.5rem);
+  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  
+  /* make sure the icon scales nicely */
+  .option-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .option-link .prefix {
+    display: none;
+  }  
+  .option-link .value {
+    text-align: center;
+    display: inline-block;
+  }
+}
+
 
 </style>
 
