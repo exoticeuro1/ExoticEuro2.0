@@ -2,6 +2,11 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Exotic Euro" %></title>
+    <% share_image       = image_url("social-preview.jpg", host: request.base_url) %>
+    <meta property="og:image"       content="<%= share_image %>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height"content="630">
+    
     <meta name="viewport"
       content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
