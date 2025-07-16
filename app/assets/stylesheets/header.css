@@ -54,8 +54,10 @@ header .bottom p {
   --title-vh: 30vh;        /* up to 30% of viewport height */
 }
 
-/* base fluid scaling */
+
+
 .site-title {
+  /* your existing styles… */
   display: inline-block;               /* make max-width honor wrapping */
   max-width: var(--title-vw);          /* never wider than 80% of vw */
   font-size: clamp(
@@ -66,7 +68,15 @@ header .bottom p {
   line-height: 1.1;
   margin-bottom: 0;
   font-family: 'Bruno Ace', sans-serif;
+
+  position: relative;  /* for clipping children */
+  overflow: hidden;    /* hide anything outside the box */
 }
+
+
+
+
+
 
 /* small-screen override */
 @media (max-width: 900px) {
@@ -78,5 +88,45 @@ header .bottom p {
       min(80vw, 20vh),
       5rem
     );
+  }
+}
+
+/* --------------------------------------------------
+   your existing header/.bottom rules… 
+   (keep your imports, header, .bottom typography, vars, etc.)
+   -------------------------------------------------- */
+
+
+/* 1) a tiny “mask” for each line to clip its child: */
+.mask {
+  display: inline-block;    /* inline on desktop, can override below */
+  overflow: hidden;         /* hide the incoming/outgoing text */
+  vertical-align: bottom;   /* keep baseline consistent */
+}
+
+/* 2) the actual slide-up animation on the inner span: */
+.reveal {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+/* 3) delays for the title words: */
+.site-title .reveal--first  { animation-delay: 0s; }
+.site-title .reveal--second { animation-delay: 0.3s; }
+
+/* 4) delays for the subtitle lines (starts after title finishes) */
+.site-subtitle .reveal--first  { animation-delay: 1.1s; }
+.site-subtitle .reveal--second { animation-delay: 1.4s; }
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* 5) on narrow viewports, stack each mask as its own line: */
+@media (max-width: 600px) {
+  .mask {
+    display: block;
   }
 }
