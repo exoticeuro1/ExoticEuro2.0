@@ -1,31 +1,47 @@
 <div class = "view">
-    <section class = "contact">  
-        <div class = "section-header">
-            <h1> Upgrade Your Ride Today</h1>
-            <a>Simply fill out our quick online booking form below and we’ll take care of the rest. </a>
-        </div>
-        
+  <section class = "contact">  
+    <div class = "section-header">
+      <h1> Upgrade Your Ride Today</h1>
+      <a>Simply fill out our quick online booking form below and we’ll take care of the rest. </a>
+    </div>
+    
+    <div class = "section-grid">
+
+      <%= link_to "#{User.find(1).location_link}", class: "map", target: "_blank" do %>
+        <%= image_tag Image.find_by(name: "location_image").url , alt: "Visit us", class: "map" %>
+      <%end%>
+
       <div class="contact-options">
-  <%= link_to "tel:#{User.find(1).phone}", class: "option-link" do %>
-    <%= image_tag "phone.svg", alt: "Call us", class: "option-icon" %>
-    <span class="contact-text">
-      <span class="prefix">Call us at </span>
-      <span class="value"><%= User.find(1).phone %></span>
-    </span>
-  <% end %>
+        <%= link_to "#{User.find(1).location_link}", class: "option-link", target: "_blank" do %>
+          <%= image_tag "location.svg", alt: "Visit us", class: "option-icon" %>
+          <span class="contact-text">
+            <span class="prefix">Visit us at </span>
+            <span class="value"><%= User.find(1).location %></span>
+          </span>
+        <% end %>
 
-  <%= link_to "mailto:#{User.find(1).contact_email}", class: "option-link" do %>
-    <%= image_tag "email.svg", alt: "Email us", class: "option-icon" %>
-    <span class="contact-text">
-      <span class="prefix">Email us at </span>
-      <span class="value"><%= User.find(1).contact_email %></span>
-    </span>
-  <% end %>
+        <%= link_to "tel:#{User.find(1).phone}", class: "option-link" do %>
+          <%= image_tag "phone.svg", alt: "Call us", class: "option-icon" %>
+          <span class="contact-text">
+            <span class="prefix">Call us at </span>
+            <span class="value"><%= User.find(1).phone %></span>
+          </span>
+        <% end %>
 
+        <%= link_to "mailto:#{User.find(1).contact_email}", class: "option-link" do %>
+          <%= image_tag "email.svg", alt: "Email us", class: "option-icon" %>
+          <span class="contact-text">
+            <span class="prefix">Email us at </span>
+            <span class="value"><%= User.find(1).contact_email %></span>
+          </span>
+        <% end %>
+      
+      </div>
+    </div>
+ 
+ 
   <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
-</div>
-
-    </section>
+</section>
         
 
 </div>
@@ -52,7 +68,7 @@
     }
 
   .option-link {
-    margin: 1rem;
+    margin: 20px;
 
   display: flex;
   align-items: center;
@@ -61,6 +77,7 @@
   height: 40px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
   
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
   text-decoration: none;
@@ -68,13 +85,33 @@
   font-size: clamp(1rem, 3vw, 1.5rem);
   
   padding: clamp(0.5rem, 2vw, .6rem)clamp(1rem, 4vw, 1.5rem);
-  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  border-radius:36px;
   
   /* make sure the icon scales nicely */
   .option-icon {
     width: 2rem;
     height: 2rem;
   }
+}
+
+
+.map{
+  width: 350px;
+  height: 300px;
+  border-radius: 24px;
+  object-fit: cover;
+  background-size: cover;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+}
+
+
+.section-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -84,6 +121,11 @@
   .option-link .value {
     text-align: center;
     display: inline-block;
+  }
+
+  .section-grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

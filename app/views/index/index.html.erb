@@ -199,6 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <% else %>
            <%=  render partial: 'index/contact/contact_card', locals: { location: @user.location }%>
         <% end %>
+        <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
+
     </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>

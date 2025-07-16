@@ -36,6 +36,26 @@
   }
 }
 
+
+.map{
+  width: 350px;
+  height: 300px;
+  border-radius: 24px;
+  object-fit: cover;
+  background-size: cover;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+}
+
+
+.section-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 600px) {
   .option-link .prefix {
     display: none;
@@ -43,5 +63,8 @@
   .option-link .value {
     text-align: center;
     display: inline-block;
+  }
+  .section-grid {
+    flex-direction: column;
   }
 }
