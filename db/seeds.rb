@@ -13,10 +13,10 @@
   email: "exoticeuro1@gmail.com",
   password: "password",
   
-  display_email: "eurodealz@gmail.com",
+  display_email: "discdealz901@gmail.com",
   contact_email: "exoticeuro1@gmail.com",
   
-  phone: "(901)-321-1234",
+  phone: "(901)-724-3434",
   
   location: nil,
   location_link: nil,
@@ -25,33 +25,9 @@
   facebook: nil,
   instagram: nil,
 
-  bio: <<~HTML.chomp,
-    <p>We’re a small, independent shop that buys repair-worthy luxury cars, restores them in-house, and sells them at a fixed price.</p>
-
-    <p>Founded in 2019 by three longtime technicians, we focus on mechanical integrity and transparent costs.</p>
-
-    <p>Every car gets a full inspection, an itemized repair plan, and a documented parts list that you review before committing.</p>
-
-    <p>Because we own each vehicle during the rebuild and do the work under one roof, there are no broker fees or surprise mark-ups.</p>
-
-    <p>The result: a luxury car that drives the way it should, priced only for the work that went into it—nothing more, nothing less.</p>
-  HTML
- 
-  policy: <<~HTML.chomp,
-    <p><strong>Scope&nbsp;of&nbsp;Service.</strong> We purchase, restore, and resell used luxury vehicles. Our responsibility ends once the completed vehicle is delivered and signed for by the customer.</p>
-
-    <p><strong>Estimates &amp; Pricing.</strong> All written estimates include parts, labor, and taxes. The quoted total will not change unless the customer approves a revised work order in writing.</p>
-
-    <p><strong>Payment Terms.</strong> A 50&nbsp;% non-refundable deposit starts the project; the balance is due on delivery. We accept major credit cards, cashier’s checks, or ACH transfers.</p>
-
-    <p><strong>Warranty.</strong> Completed vehicles carry a 12-month / 12,000-mile limited warranty on parts and labor performed by our shop. Normal wear items and customer-supplied components are excluded.</p>
-
-    <p><strong>Customer Responsibilities.</strong> The customer must secure insurance before taking possession and must follow the manufacturer’s maintenance schedule. Failure to do so voids the warranty.</p>
-
-    <p><strong>Limitation of Liability.</strong> Our maximum liability is limited to the amount paid for the work described in the signed estimate. We are not liable for indirect, incidental, or consequential damages.</p>
-
-    <p><strong>Governing Law.</strong> This agreement is governed by the laws of the State of Tennessee. Any disputes will be resolved in the courts of Shelby County.</p>
-  HTML
+  about: <<~HTML.chomp,
+    <p> Our founder started repairing cars in 1998 for family and friends, quickly developing a cost-effective way to source quality parts. With an electrical engineering background, he mastered complex systems in both American and foreign vehicles. After years of hands-on experience, he co-founded a dealership in 2020 and launched Exotic Euro in 2025 to bring his passion for high-end car restoration to the next level. </p>             
+    HTML
 )
 
 puts "Admin user created"

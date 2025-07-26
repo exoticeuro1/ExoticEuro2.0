@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class = "our-story">
             <div class = "story-content">
                 <h1>Our Story</h1>
-                <p> Our founder started repairing cars in 1998 for family and friends, quickly developing a cost-effective way to source quality parts. With an electrical engineering background, he mastered complex systems in both American and foreign vehicles. After years of hands-on experience, he co-founded a dealership in 2020 and launched Exotic Euro in 2025 to bring his passion for high-end car restoration to the next level. </p>    
+                <%= sanitize @user.about, tags: %w(p br strong em ul ol li) %>  
             </div>    
         </div>        
         <div class = "about-gradient"></div>
