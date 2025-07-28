@@ -27,7 +27,7 @@
   font-size: clamp(1rem, 3vw, 1.5rem);
   
   padding: clamp(0.5rem, 2vw, .6rem)clamp(1rem, 4vw, 1.5rem);
-  border-radius: clamp(0.5rem, 5vw, 2.5rem);
+  border-radius: 24px;
   
   /* make sure the icon scales nicely */
   .option-icon {
@@ -66,5 +66,9 @@
   }
   .section-grid {
     flex-direction: column;
+  }
+
+  .contact-options{
+    width: 100%;
   }
 }
