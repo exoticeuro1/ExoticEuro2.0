@@ -113,6 +113,11 @@
       width: 80px;
       height: 80px;
     }
+
+    .step-icon{
+        width: 80px;
+        height: 80px;
+    } 
     .step-title-mobile {
       display: block;
       font-size: clamp(1.5rem, 5vw, 2.25rem);
