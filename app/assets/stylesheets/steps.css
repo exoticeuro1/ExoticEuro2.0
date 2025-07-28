@@ -22,23 +22,8 @@
     width: 85%;
 }
 
-.step-text {
-    position: relative;
-    color: #fff;
-    padding-left: 50px;
-    text-align: left;
-    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-}
 
-.step-text::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 21px;
-    height: 100%;
-    background: linear-gradient(to left, #ffffff, transparent);
-}
+
 
 
 .book-btn {
@@ -63,9 +48,3 @@
     color: #fff;
 }
 
-.step {
-  /* remove any static transform from earlier examples */
-  transform: scale(0.8);  
-  transition: transform 0.2s linear; /* smooth out updates */
-  
-}

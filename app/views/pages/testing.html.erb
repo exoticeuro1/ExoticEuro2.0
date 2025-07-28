@@ -1,52 +1,48 @@
 <div class = "view">
-  <section class = "contact">  
+  <section class = "step-by-step">
     <div class = "section-header">
-      <h1> Upgrade Your Ride Today</h1>
-      <a>Simply fill out our quick online booking form below and we’ll take care of the rest. </a>
+      <h1>Step by Step Process</h1>
+      <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
     </div>
-    
-    <div class = "section-grid">
 
-      <%= link_to "#{User.find(1).location_link}", class: "map", target: "_blank" do %>
-        <%= image_tag Image.find_by(name: "location_image").url , alt: "Visit us", class: "map" %>
-      <%end%>
-
-      <div class="contact-options">
-        <%= link_to "#{User.find(1).location_link}", class: "option-link", target: "_blank" do %>
-          <%= image_tag "location.svg", alt: "Visit us", class: "option-icon" %>
-          <span class="contact-text">
-            <span class="prefix">Visit us at </span>
-            <span class="value"><%= User.find(1).location %></span>
-          </span>
-        <% end %>
-
-        <%= link_to "tel:#{User.find(1).phone}", class: "option-link" do %>
-          <%= image_tag "phone.svg", alt: "Call us", class: "option-icon" %>
-          <span class="contact-text">
-            <span class="prefix">Call us at </span>
-            <span class="value"><%= User.find(1).phone %></span>
-          </span>
-        <% end %>
-
-        <%= link_to "mailto:#{User.find(1).contact_email}", class: "option-link" do %>
-          <%= image_tag "email.svg", alt: "Email us", class: "option-icon" %>
-          <span class="contact-text">
-            <span class="prefix">Email us at </span>
-            <span class="value"><%= User.find(1).contact_email %></span>
-          </span>
-        <% end %>
-      
+    <div class = "step">
+      <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
+      <div class = "content">
+        <h2 class = "step-title">Consultation & Sourcing </h2>
+        <p class = "step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs. </p>
       </div>
     </div>
- 
- 
-  <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
-</section>
-        
 
+    
+    <div class = "step">
+      <div class = "step-icon">
+        <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
+      </div>
+      <div class = "content">
+        <h2 class = "step-title">Inspection & Repair </h2>
+        <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
+      </div>
+    </div>
+
+    
+    <div class = "step">
+      <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon") %>
+      <div class = "content">
+        <h2 class = "step-title">Delivery </h2>
+        <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
+      </div>  
+    </div>
+
+    <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
+            
+  </section>
 </div>
 
+
+
 <style>
+
+
     .view{
         height: 100vh;           
         width: 100%;             
@@ -57,81 +53,59 @@
         overflow: hidden;
     }
 
-    .contact{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #e1e2e1;
-        text-align: center;
-    }
 
-  .option-link {
+.step {
+    background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 95%;
+    max-width: 1200px;
+
+}
+
+.step img {
+    width: 100px;
+    height: 100px;
     margin: 20px;
 
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  gap: 1rem;
-  height: 40px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
-  
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  color: white;
-  border: none;
-  text-decoration: none;
-  
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  
-  padding: clamp(0.5rem, 2vw, .6rem)clamp(1rem, 4vw, 1.5rem);
-  border-radius:36px;
-  
-  /* make sure the icon scales nicely */
-  .option-icon {
-    width: 2rem;
-    height: 2rem;
-  }
 }
 
-
-.map{
-  width: 350px;
-  height: 300px;
-  border-radius: 24px;
-  object-fit: cover;
-  background-size: cover;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-
-}
-
-
-.section-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-@media screen and (max-width: 600px) {
-  .option-link .prefix {
-    display: none;
-  }  
-  .option-link .value {
-    text-align: center;
-    display: inline-block;
-  }
-
-  .contact-options{
-    width: 100%;
-  }
-  .section-grid {
-    flex-direction: column;
+.step-icon {
+    display: flex;
     align-items: center;
-  }
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    
+    margin: 20px; 
+}
+
+.step-text {
+    color: #e1e2e1;
+    text-align: left;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.step-title {
+    color: #e1e2e1;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 
 </style>
-
