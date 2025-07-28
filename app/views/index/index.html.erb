@@ -1,27 +1,4 @@
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const steps = document.querySelectorAll('.step');
 
-  // build thresholds [0, 0.01, 0.02, …, 1]
-  const thresholds = Array.from({length: 101}, (_, i) => i / 100);
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // entry.intersectionRatio is 0→1
-      const ratio = entry.intersectionRatio;
-      // map that to a scale: e.g. from 0.8 → 1
-      const scale = 0.8 + 0.2 * ratio;
-      entry.target.style.transform = `scale(${scale})`;
-    });
-  }, { threshold: thresholds });
-
-  steps.forEach(step => {
-    // ensure transform-origin is center
-    step.style.transformOrigin = 'center center';
-    obs.observe(step);
-  });
-});
-</script>
 
 
 <div class="page">
@@ -51,25 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
             <h1>Step by Step Process</h1>
             <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
         </div>
+        
         <div class = "step">
-            <div class = "step-text">
-                <p>We discuss the the model of your car, and the initial budget.</p>
-            </div>
+        <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
+        <div class = "content">
+            <h2 class = "step-title">Consultation & Sourcing </h2>
+            <p class = "step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs. </p>
         </div>
-        <div class = "step">
-            <div class = "step-text">
-                <p>Our Specialists would find and inspect the requested car to determine the cost of repairs. </p>
-            </div>
         </div>
+
+        
         <div class = "step">
-            <div class = "step-text">
-                <p>Our Mechanics would repair the car to factory specs. </p>
-            </div>
+        <div class = "step-icon">
+            <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
         </div>
+        <div class = "content">
+            <h2 class = "step-title">Inspection & Repair </h2>
+            <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
+        </div>
+        </div>
+
+        
         <div class = "step">
-            <div class = "step-text">
-                <p>Our Team delivers your dream car for the agreed budget. </p>
-            </div>
+        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon") %>
+        <div class = "content">
+            <h2 class = "step-title">Delivery </h2>
+            <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
+        </div>  
         </div>
         <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
             

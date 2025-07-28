@@ -8,6 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&display=swap');
 
  body {
     margin: 0;
@@ -19,6 +21,7 @@
     justify-content: center;
     overflow-x: hidden;
     scrollbar-width: 0;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .space {
