@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;    
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -17,7 +18,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 95%;
+    width: 90%;
     max-width: 1200px;
     margin: 10px;
     padding: 20px;
@@ -75,7 +76,8 @@
 
 .book-btn {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%), #000;
-    width: 350px;
+    width: 80%;
+    max-width: 350px;
     height: 60px;
     border-radius: 36px;
     margin: 20px auto;
@@ -88,7 +90,6 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     font-size: 1.75rem;
-    font-family: 
 }
 
 .book-btn:hover {
@@ -96,3 +97,41 @@
     color: #fff;
 }
 
+
+  .step-title-mobile{
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .step{
+      flex-direction: column;
+      padding: 20px 10px;
+      margin: 10px;
+    }
+
+    .step img{
+      width: 80px;
+      height: 80px;
+    }
+    .step-title-mobile {
+      display: block;
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .step-title {
+      display: none;
+    }
+    
+    .step-icon-mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+
+  }

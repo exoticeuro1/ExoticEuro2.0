@@ -5,19 +5,29 @@
       <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
     </div>
 
-    <div class = "step">
-      <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
+    <div class="step">
+      <div class = "step-icon-mobile">
+        <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
+        <h2 class="step-title-mobile">Consultation & Sourcing</h2>
+      </div>
       <div class = "content">
-        <h2 class = "step-title">Consultation & Sourcing </h2>
-        <p class = "step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs. </p>
+        <h2 class="step-title">Consultation & Sourcing</h2>
+        <p class="step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs.</p>
       </div>
     </div>
 
+
+
     
     <div class = "step">
-      <div class = "step-icon">
-        <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
+    
+      <div class = "step-icon-mobile">
+        <div class = "step-icon">
+          <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
+        </div>
+        <h2 class="step-title-mobile">Inspection & Repair</h2>
       </div>
+
       <div class = "content">
         <h2 class = "step-title">Inspection & Repair </h2>
         <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
@@ -26,7 +36,11 @@
 
     
     <div class = "step">
-      <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon") %>
+      <div class = "step-icon-mobile">
+        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
+        
+        <h2 class="step-title-mobile">Delivery</h2>
+      </div>
       <div class = "content">
         <h2 class = "step-title">Delivery </h2>
         <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
@@ -43,8 +57,7 @@
 <style>
 
 
-    .view{
-        height: 100vh;           
+    .view{          
         width: 100%;             
         display: flex;
         justify-content: center;
@@ -54,7 +67,43 @@
     }
 
 
+  .step-title-mobile{
+    display: none;
+  }
 
+  @media (max-width: 768px) {
+    .step{
+      flex-direction: column;
+      padding: 20px 10px;
+      margin: 10px;
+    }
+
+    .step img{
+      width: 80px;
+      height: 80px;
+    }
+    .step-title-mobile {
+      display: block;
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .step-title {
+      display: none;
+    }
+    
+    .step-icon-mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+
+  }
 
 
 </style>

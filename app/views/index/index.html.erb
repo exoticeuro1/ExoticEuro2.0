@@ -29,33 +29,48 @@
             <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
         </div>
         
-        <div class = "step">
+        
+    <div class="step">
+      <div class = "step-icon-mobile">
         <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
-        <div class = "content">
-            <h2 class = "step-title">Consultation & Sourcing </h2>
-            <p class = "step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs. </p>
-        </div>
-        </div>
+        <h2 class="step-title-mobile">Consultation & Sourcing</h2>
+      </div>
+      <div class = "content">
+        <h2 class="step-title">Consultation & Sourcing</h2>
+        <p class="step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs.</p>
+      </div>
+    </div>
 
-        
-        <div class = "step">
+
+
+    
+    <div class = "step">
+    
+      <div class = "step-icon-mobile">
         <div class = "step-icon">
-            <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
+          <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
         </div>
-        <div class = "content">
-            <h2 class = "step-title">Inspection & Repair </h2>
-            <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
-        </div>
-        </div>
+        <h2 class="step-title-mobile">Inspection & Repair</h2>
+      </div>
 
+      <div class = "content">
+        <h2 class = "step-title">Inspection & Repair </h2>
+        <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
+      </div>
+    </div>
+
+    
+    <div class = "step">
+      <div class = "step-icon-mobile">
+        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
         
-        <div class = "step">
-        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon") %>
-        <div class = "content">
-            <h2 class = "step-title">Delivery </h2>
-            <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
-        </div>  
-        </div>
+        <h2 class="step-title-mobile">Delivery</h2>
+      </div>
+      <div class = "content">
+        <h2 class = "step-title">Delivery </h2>
+        <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
+      </div>  
+    </div>
         <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
             
       
