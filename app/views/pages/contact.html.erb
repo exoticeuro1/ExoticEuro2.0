@@ -1,6 +1,6 @@
 <section class = "contact">
   <div class = "page-nav">
-    <div class = "site-title">
+    <div class = "website-title">
       <h1><%= link_to "ExoticEuro", root_path, style: "text-decoration: none; color: inherit;" %></h1>
     </div>
 
@@ -75,16 +75,17 @@
   margin: 20px auto;
 }
 
-.site-title {
+.website-title {
   font-size: 1.75rem;
   flex: 1;
   text-align: center;
   height: 100%;
+  width: 100%;
   background:  linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%), #000;
   border-radius: 56px;
 }
 
-.site-title:hover {
+.website-title:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%), #000;
 }
 
@@ -142,11 +143,12 @@
   .page-nav {
     flex-direction: column;
     align-items: center;
+    
   }
 
-  .site-title, .page-title {
-    width: 100%;
+  .website-title, .page-title {
     flex: none;
+    width: 100%;
   }
 
   .contact-form-card {
