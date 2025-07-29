@@ -11,6 +11,7 @@
 
   <div class = "contact-form-card">
     <%= form_with(url: send_email_path, method: :post, local: true) do |form| %>
+      <div>
       <div class = "form-content">
         <div class="form-group">
           <div class="form-subgroup">
@@ -44,6 +45,7 @@
           <%= form.text_area :message, required: true, placeholder: "Write your message here...", rows: 5 %>
         </div>
         <%= form.submit "Send Message" %>
+      </div>
       </div>
     <% end %>
   </div>

@@ -5,47 +5,47 @@
   <div class='form-card'>
     <h2> Update User</h2>
     <%= form_with(url: update_user_path(user_id: @user.id), local: true, method: :patch) do |form| %>
-      <div>
+      <div class = "form-column">
         <%= form.label :display_email, "Display Email" %>
         <%= form.text_field :display_email, value: @user.display_email, placeholder: "Enter Email For People to see " %>
       </div>
 
       <h3> Contact Page Information</h3>
-      <div>
+      <div class = "form-column">
         <%= form.label :phone %>
         <%= form.text_field :phone, value: @user.phone %>
       </div>
-      <div>
+      <div class = "form-column">
         <%= form.label :contact_email, "Contact Form Email" %>
         <%= form.text_field :contact_email, value: @user.contact_email, placeholder: "Set up Email for the Contact form" %>
       </div>
       
       <h3> Location Information</h3>
-      <div>
+      <div class = "form-column">
         <%= form.label :location, "Location Address" %>
         <%= form.text_field :location, value: @user.location, placeholder: "Enter the Address 8321 something something" %>
       </div>
-      <div>
+      <div class = "form-column">
         <%= form.label :location_link, "Location Link" %>
         <%= form.text_field :location_link, value: @user.location_link, placeholder: "Enter Link from Google Maps" %>
       </div>
 
       <h3> Social Media Links</h3>
-      <div>
+      <div class = "form-column">
         <%= form.label :youtube %>
         <%= form.text_field :youtube, value: @user.youtube %>
       </div>
-      <div>
+      <div class = "form-column">
         <%= form.label :facebook %>
         <%= form.text_field :facebook, value: @user.facebook %>
       </div>
-      <div>
+      <div class = "form-column">
         <%= form.label :instagram %>
         <%= form.text_field :instagram, value: @user.instagram %>
       </div>
 
       <h3> About Page Information</h3>
-      <div>
+      <div class = "form-column">
         <%= form.label :bio, "About Info" %>
         <%= form.text_area :bio,
               rows: 10,          # height  (lines)
@@ -53,7 +53,7 @@
               value: @user.about %>
       </div>
       
-      <div>
+      <div class = "form-column">
         <%= form.submit "Update User" %>
       </div>
     <% end %>
@@ -62,52 +62,52 @@
   <div class = 'form-card'>
     <h2> Add New Car</h2>
     <%= form_with(url: create_car_path, local: true, html: { multipart: true }) do |form| %>
-      <div>
+      <div class = "form-column"> 
         <%= form.label :car_make, "Make" %>
         <%= form.text_field :car_make, requered: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :car_model, "Model" %>
         <%= form.text_field :car_model, required: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :price %>
         <%= form.number_field :price, step: 0.01, required: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :year, "Year of Manufacture" %>
         <%= form.number_field :year, step: 1, required: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :compared_price %>
         <%= form.number_field :compared_price, step: 0.01, placeholder: "Enter the price you want to compare with" %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :miles, "Mileage" %>
         <%= form.number_field :miles, step: 1, required: true %>
       </div>
 
-      <div>
+      <div class = "form-column" >
         <%= form.label :description %>
         <%= form.text_area :description, rows: 5, cols: 60, required: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :link, "External Link" %>
         <%= form.text_field :link, placeholder: "Enter a link to the car's page" %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.label :images, "Upload Car Images" %>
-      <%= file_field_tag "car[image]", accept: "image/*", requered: true %>
+        <%= file_field_tag "car[image]", accept: ".png,.jpg,.jpeg", required: true %>
       </div>
 
-      <div>
+      <div class = "form-column">
         <%= form.submit "Create Car" %>
       </div>
     <% end %>
