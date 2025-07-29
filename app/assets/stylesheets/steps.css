@@ -101,8 +101,11 @@
   .step-title-mobile{
     display: none;
   }
+  
+  
 
   @media (max-width: 768px) {
+
     .step{
       flex-direction: column;
       padding: 20px 10px;
@@ -140,3 +143,15 @@
 
 
   }
+
+  .responsive-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+    @media (max-width: 768px) {
+
+  .step-icon .responsive-icon {
+    width: 60px;
+    height: 60px;
+  }}
