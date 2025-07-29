@@ -188,10 +188,13 @@ form textarea {
   border-radius: 54px;
   font-size: 1rem;
   height: 40px;
+  box-sizing: border-box; 
+  padding: 20px;
   
 }
 
 form textarea {
+  border-radius: 36px;
   resize: vertical;
   min-height: 280px;
 }
