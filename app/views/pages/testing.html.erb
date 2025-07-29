@@ -1,54 +1,53 @@
 <div class = "view">
-  <section class = "step-by-step">
-    <div class = "section-header">
-      <h1>Step by Step Process</h1>
-      <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
-    </div>
-
-    <div class="step">
-      <div class = "step-icon-mobile">
-        <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
-        <h2 class="step-title-mobile">Consultation & Sourcing</h2>
+  <section class = "contact">
+    <div class = "page-nav">
+      <div class = "site-title">
+        <h1>ExoticEuro</h1>
       </div>
-      <div class = "content">
-        <h2 class="step-title">Consultation & Sourcing</h2>
-        <p class="step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs.</p>
+
+      <div class = "page-title">
+        <h1>Contant us </h1>
       </div>
     </div>
 
+    <div class = "contact-form-card">
+      <%= form_with(url: send_email_path, method: :post, local: true) do |form| %>
+        <div class = "form-content">
+          <div class="form-group">
+            <div class="form-subgroup">
+              <%= form.label :first_name, "First Name" %>
+              <%= form.text_field :first_name, required: true, placeholder: "Enter your first name" %>
+            </div>
+
+            <div class="form-subgroup">
+              <%= form.label :last_name, "Last Name" %>
+              <%= form.text_field :last_name, required: true, placeholder: "Enter your last name" %>
+            </div>
+          </div>
 
 
-    
-    <div class = "step">
-    
-      <div class = "step-icon-mobile">
-        <div class = "step-icon">
-          <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
-        </div>
-        <h2 class="step-title-mobile">Inspection & Repair</h2>
-      </div>
+          <div class="form-group">
+          
+            <div class="form-subgroup">
+              <%= form.label :email, "Your Email" %>
+              <%= form.email_field :email, required: true, placeholder: "you@example.com" %>
+            </div>
 
-      <div class = "content">
-        <h2 class = "step-title">Inspection & Repair </h2>
-        <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs, and our Mechanics restore it to factory specs. </p>
-      </div>
-    </div>
-
-    
-    <div class = "step">
-      <div class = "step-icon-mobile">
-        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon", style: "width: 80px; height: 80px;" ) %>
-        
-        <h2 class="step-title-mobile">Delivery</h2>
-      </div>
-      <div class = "content">
-        <h2 class = "step-title">Delivery </h2>
-        <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
-      </div>  
-    </div>
-
-    <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
             
+            <div class="form-subgroup">
+              <%= form.label :phone, "Your Phone" %>
+              <%= form.telephone_field :phone, required: true, placeholder: "(nnn)-nnn-nnnn" %>
+            </div>
+          </div>
+
+          <div class = "wrapper">
+            <%= form.label :message, "Message" %>
+            <%= form.text_area :message, required: true, placeholder: "Write your message here...", rows: 5 %>
+          </div>
+          <%= form.submit "Send Message" %>
+        </div>
+      <% end %>
+    </div>
   </section>
 </div>
 
@@ -57,53 +56,92 @@
 <style>
 
 
-    .view{          
-        width: 100%;             
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-        border: 2px solid green;
-        overflow: hidden;
-    }
+.view{          
+  width: 100%;             
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  border: 2px solid green;
+  overflow: hidden;
+}
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  
+  color: white;
+}
 
-  .step-title-mobile{
-    display: none;
-  }
+.page-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+}
 
-  @media (max-width: 768px) {
-    .step{
-      flex-direction: column;
-      padding: 20px 10px;
-      margin: 10px;
-    }
+.site-title {
+  font-size: 1.75rem;
+  flex: 1;
+  text-align: center;
 
-    .step img{
-      width: 80px;
-      height: 80px;
-    }
-    .step-title-mobile {
-      display: block;
-      font-size: clamp(1.5rem, 5vw, 2.25rem);
-      margin-top: 0;
-      margin-bottom: 10px;
-      text-align: left;
-    }
+  background:  linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%), #000;
+  border-radius: 56px;
+}
 
-    .step-title {
-      display: none;
-    }
-    
-    .step-icon-mobile {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-    }
+.page-title {
+  font-size: 1.75rem;
+  text-align: center;
 
+  flex: 2;
+  background: #0D1B2A;
+  border-radius: 56px;
+}
 
-  }
+/*********************************************************************/
 
+.contact-form-card {
+  background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
+  width: 95%;
+  max-width: 1200px;
+
+  border-radius: 54px;
+}
+
+.contact-form-card .form-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  
+}
+
+.form-group .form-subgroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.form-content{
+  margin: 40px;
+  
+  display: flex;
+  flex-direction: column;
+  
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+}
 
 </style>
