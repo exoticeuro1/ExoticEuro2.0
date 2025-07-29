@@ -16,7 +16,6 @@
   margin: 0 auto;
 }
 
-/* phones: 1 column */
 @media (max-width: 900px) {
   .car-grid {
     grid-template-columns: 1fr;
@@ -41,7 +40,6 @@
   overflow: hidden;
 }
 
-/* the <img> itself */
 .card_image img {
     width: 100%;
     height: 100%;
@@ -117,18 +115,18 @@
     text-decoration: none;
 }
 
-@media (max-width: 420px) {        /* fire on most phones */
+@media (max-width: 420px) {       
   .card{
-    width: 90vw;                   /* 90 % of the viewport width */
-    height: 520px;                 /* a bit shorter than 600 px */
+    width: 90vw;                  
+    height: 520px;                
   }
 
   .card_image{
-    height: 45%;                   /* keep roughly the same visual balance */
+    height: 45%;                  
   }
 
   .show-btn{
-    font-size: 1em;                /* prevents huge buttons on tiny screens */
+    font-size: 1em;               
     padding: 10px 30px;
   }
 }
@@ -140,13 +138,13 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers text inside the box */
+    align-items: center; 
     border-radius: 24px;    
     font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-    margin: 40px; /* horizontally centers block element */
+    margin: 40px;
 }
 
-/* scope everything under .notify-form */
+ 
 .notify-form {
   gap: 0.5rem;
   align-items: center;

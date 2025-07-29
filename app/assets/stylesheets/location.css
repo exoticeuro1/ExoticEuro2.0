@@ -1,17 +1,17 @@
 .contact-section {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    align-items: center;
-    color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  align-items: center;
+  color: white;
 }
 
-  .option-link {
-    margin: 1rem;
+.option-link {
+  margin: 1rem;
 
   display: flex;
   align-items: center;

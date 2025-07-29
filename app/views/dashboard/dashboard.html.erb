@@ -50,16 +50,7 @@
         <%= form.text_area :bio,
               rows: 10,          # height  (lines)
               cols: 60,          # width   (characters)
-              value: @user.bio %>
-      </div>
-
-      <h3> Policy Page Information</h3>
-      <div>
-        <%= form.label :policy %>
-        <%= form.text_area :policy,
-              rows: 10,
-              cols: 60,
-              value: @user.policy %>
+              value: @user.about %>
       </div>
       
       <div>

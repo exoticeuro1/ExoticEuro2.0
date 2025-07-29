@@ -17,6 +17,11 @@ class DashboardController < ApplicationController
     #region dashboard
 # User ----------------------------------------------------------------------------------------------------------------
     def update_user
+        unless (params[:location].blank? && params[:location_link]) || (params[:location].present? && params[:location_link].present?)
+            flash[:alert] = "Please provide either both a location and a location link, or neither."
+            redirect_to dashboard_path and return
+        end
+        
         if edit_selected_user
             flash[:notice] = "User updated successfully."
             redirect_to dashboard_path
