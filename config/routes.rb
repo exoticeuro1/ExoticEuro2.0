@@ -18,19 +18,18 @@ Rails.application.routes.draw do
   # Landing page
   get "/", to: "index#page", as: "index"
   # Pages
-  get "/about", to: "pages#about", as: "about"
   get "/contact", to: "pages#contact", as: "contact"
   post "/contact/send_email", to: "pages#send_email", as: "send_email"
-  get "/policy", to: "pages#policy", as: "policy"
+
   get "/testing", to: "pages#testing", as: "testing"
   get "/testing_two", to: "pages#testing_two", as: "testing_two"
   
   get "/car/:car_id", to: "pages#car", as: "car"
   # Dashboard
   get "/dashboard", to: "dashboard#page", as: "dashboard"
-  # user
+  # User Management
   patch "/dashboard/update_user", to: "dashboard#update_user", as: "update_user"
-  # cars
+  # Cars Management
   post "/dashboard/create_car", to: "dashboard#create_car", as: "create_car"
   
   get "/dashboard/edit_car/:car_id", to: "dashboard#edit_car", as: "edit_car"
@@ -41,6 +40,4 @@ Rails.application.routes.draw do
   post "/dashboard/create_image", to: "dashboard#create_image", as: "create_image"
   delete "/dashboard/delete_image", to: "dashboard#delete_image", as: "delete_image"
 
-
-  get "/exp", to: "pages#exp", as: "exp"
 end

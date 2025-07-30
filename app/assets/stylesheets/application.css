@@ -8,6 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&display=swap');
 
  body {
     margin: 0;
@@ -19,6 +21,7 @@
     justify-content: center;
     overflow-x: hidden;
     scrollbar-width: 0;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .space {
@@ -63,14 +66,17 @@ footer{
 
 
 .section-header a{
-    font-size: clamp(0.75rem, 5vw, 1.5rem);
+    font-size: clamp(0.6rem, 5vw, 1.4rem);
     margin-top: 10px;
     padding-top: 0;
 }
 
 /* ------------------------------------------------------------------------------------------------- */
 
-
+footer{
+  height: auto;
+  padding-top: 20px;
+}
 .top-footer-section {
     display: flex;
     align-items: center;
@@ -83,6 +89,8 @@ footer{
     font-size: 3rem;
     margin: 0;
     padding: 0;
+    
+  font-family: 'Bruno Ace', sans-serif;
 }
 
 .social-media {
@@ -124,12 +132,13 @@ footer{
     font-size : 1.2rem;
     font-style: italic;
     margin: 10px;
-
+    height: 30px;
 }
 
 .bottom-footer-section{
-    margin: 10px;
+  margin: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -143,7 +152,11 @@ footer{
     height: auto;
     padding: 30px;
     margin: 20px;
-    background-color: #fff;
+    background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
 }
 .form-card h2{
     font-size: 2.5rem;
@@ -160,85 +173,115 @@ form {
   flex-direction: column;
 }
 
-form div {
-    margin-bottom: .2rem;
-}
 
 form label {
-    margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: black;
-  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #e1e2e1;
+  font-size: 1.5rem;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.form-column{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-column label { 
+  text-align: center;
 }
 
 form input[type="text"],
 form input[type="number"],
-form textarea,
-form input[type="file"] {
-   padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 24px;
+form input[type="tel"],
+form input[type="email"],
+form input[type="file"],
+form textarea {
+  padding: 20px auto;
+  border-radius: 54px;
   font-size: 1rem;
-  box-sizing: border-box;
-  width: 100%;
+  height: 40px;
+  box-sizing: border-box; 
+  padding: 20px;
+  
 }
 
 form textarea {
-resize: vertical;
+  border-radius: 36px;
+  resize: vertical;
+  min-height: 280px;
 }
 
 form input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    font-weight: bold;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%), #000;
     border: none;
-    cursor: pointer;
+    color: #e1e2e1;
     padding: 0.75rem;
-    transition: background-color 0.3s ease;
-    
+    width: 400px;
+    height: 60px;
+    align-self: center;
     border-radius: 24px;
+    margin-top: 20px;
+    font-size: 1.75rem;
 }
 
 form input[type="submit"]:hover {
-    background: #0056b3;
+ background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%), #000;
 }
 
-.home-btn {
-    width: 200px;
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border: 1px solid #fff;
-  border-radius: 25px;
-  display: inline-block;
-  font-size: 1.1rem;
-  align-self: center;;
-}
-
-
-.home-btn:hover,
-.home-btn:focus-visible {          
-  background-color: rgba(255,255,255,0.12);    
-  color: #fff;                                  
-  text-decoration: none;                        
-}
 
 
 
 /* ------------------------------------------------------------------------------------------------- */
 .flash-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    max-width: 80%;
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-weight: bold;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0); /* start as a 0-width line at center */
+  transform-origin: center center;       /* grow/shrink from the middle */
+  
+  z-index: 1000;
+  max-width: 80%;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 24px;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  
+  /* 
+    1) expand over 0.5s (ease-out), 
+    2) stay open for 3s,
+    3) collapse over 0.5s (ease-in)
+  */
+  animation:
+    expand 0.5s ease-out forwards,
+    collapse 0.5s ease-in forwards 2s;
+}
+
+@keyframes expand {
+  from {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
   }
+  to {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes collapse {
+  from {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+  }
+}
+
   
   .flash-message.notice {
     background-color: #d4edda;
@@ -279,8 +322,10 @@ form input[type="submit"]:hover {
 
 
     footer{
-        height: auto; 
-        padding: 10px 0;
+        height: auto; /* allow footer to grow with content */
+
+      padding: auto;
+
     }
     .top-footer-section {
         
@@ -305,13 +350,131 @@ form input[type="submit"]:hover {
     .bottom-footer-section {
         margin: 10px;
         text-align: center;
+        
     }
 
     .top-footer-section h2{
         font-size: 3rem; /* slightly smaller heading if you want */
+        
     }
     .middle-footer-section h3{
         margin: 0;
         padding: 5px;
     }
   }
+
+
+  .dev-credit{
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+  }
+
+  .dev-credit-text {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .dev-credit:hover{
+    background-color: rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* your existing link wrapper styles */
+.dev-credit {
+  
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.dev-credit-text {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dev-credit:hover {
+  background-color: rgba(255,255,255,0.12);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ROTATOR + STATIC SUFFIX */
+.frame {
+  display: inline-block;        /* shrink‐wrap to content */
+}
+
+.carousel {
+  display: inline-flex;         /* rotator + post on one line */
+  align-items: center;
+  font-size: clamp(1rem, 3vmin, 1.5rem);
+  line-height: 1.5em;           /* matches the translate distances */
+}
+
+.change_outer {
+  position: relative;
+  overflow: hidden;             /* hide off‐frame words */
+  height: 1.5em;                /* exactly one line tall */
+  margin-right: .6ch;            /* gap before “by Stilyan” */
+}
+
+
+.element {
+  display: block;               /* stack vertically */
+  font-weight: 100;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+
+  text-align: right;
+}
+
+/* static “by Stilyan” */
+.post {
+  font-weight: 100;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.change_inner {
+  animation: rotate 8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  /* First word (“Designed”): hold 0→30% */
+  0%,   30%   { transform: translateY(0); }
+  /* Second word (“Implemented”): 33%→63% */
+  33%,  63%   { transform: translateY(-1.5em); }
+  /* Third word (“Delivered”): 66%→96% */
+  66%,  96%   { transform: translateY(-3em); }
+  /* Snap back to start at 100% */
+  100%        { transform: translateY(0); }
+}
+
+
+
+@media (max-width: 1200px){
+
+    
+  form label {
+    text-align: center;
+  }
+
+  form input[type="submit"]{
+    width: 300px;
+  }
+
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="tel"],
+  form input[type="email"],
+  form input[type="file"],
+  form textarea {
+    width: 100%;
+    padding: 5px;
+  }
+
+  form textarea { 
+    padding-top: 30px;
+  }
+}

@@ -1,85 +1,74 @@
 .contact-section {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    align-items: center;
-    color: white;
-}
-
-.contact-card {
-  width: 95%;
-  max-width: 1032px;
-  box-sizing: border-box;
-  min-height: 350px;
-  border-radius: 48px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #7195B5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.left-side,
-.work-hours {
-  flex: 1 1 20%; /* Can shrink/grow and start stacking under 45% width */
-  text-align: left;
-  min-width: 280px;
-}
-
-.contact-info,
-.hours-info {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  align-items: center;
+  color: white;
+}
+
+.option-link {
+  margin: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), #1B3B6F;
+  
+  color: white;
+  border: none;
+  text-decoration: none;
+  
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  
+  padding: clamp(0.5rem, 2vw, .6rem)clamp(1rem, 4vw, 1.5rem);
+  border-radius: 24px;
+  
+  /* make sure the icon scales nicely */
+  .option-icon {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 
-.contact-info,
-.hours-info a {
-    font-size: 1.5rem;
+.map{
+  width: 350px;
+  height: 300px;
+  border-radius: 24px;
+  object-fit: cover;
+  background-size: cover;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
 }
 
-.contact-card h3 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+
+.section-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
-
-
-.contact-card h2{
-    font-size: 2rem;
-    margin: 0;
-    padding: 0;
+@media screen and (max-width: 600px) {
+  .option-link .prefix {
+    display: none;
+  }  
+  .option-link .value {
     text-align: center;
-    padding-top: 20px;
-}
-
-@media(max-width: 768px) {
-  .contact-card {
+    display: inline-block;
+  }
+  .section-grid {
     flex-direction: column;
-    align-items: center;
   }
 
-  .left-side,
-  .work-hours {
-    flex: 1 1 100%; /* Full width on smaller screens */
-    text-align: center;
-    min-width: unset; /* Reset min-width for smaller screens */
-  }
-
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
+  .contact-options{
+    width: 100%;
   }
 }

@@ -1,5 +1,5 @@
 
-      <footer>
+<footer>
         <div class = "top-footer-section">
             <h2> <%= link_to 'Exotic Euro', root_path, class: "link" %></h2>
             <div class="social-media">
@@ -38,13 +38,27 @@
         </div>
 
         <div class = "middle-footer-section">
-            <h3><%= link_to 'About Us', about_path, class: "link" %></h2>
-            <h3><%= link_to 'Contact', contact_path, class: "link" %></h2>
-            <h3><%= link_to 'Policy', policy_path, class: "link" %></h2>
         </div>
 
-        <div class = "bottom-footer-section">
-            <h4>© 2025 Exotic Euro. All rights reserved.<br>Developed by S.T.I.</h4>
-            
+    <div class="bottom-footer-section">
+        <h4>© 2025 Exotic Euro. All rights reserved.</h4>
+
+        <div class="frame">
+            <div class="carousel">
+                <div class="change_outer">
+                    <div class="change_inner">
+                        <div class="element">Designed by</div>
+                        <div class="element">Implemented by</div>
+                        <div class="element">Delivered by</div>
+                        <!-- if you still need a duplicate at the end for smooth looping, uncomment: -->
+                        <!-- <div class="element">Designed</div> -->
+                    </div>
+                </div>
+                <div class="post">
+                    <%= link_to 'Stilyan', 'https://www.stilyandimitrov.com', class: 'dev-credit dev-credit-text', target: '_blank', rel: 'noopener noreferrer' %>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+</footer>

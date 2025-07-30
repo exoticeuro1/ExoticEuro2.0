@@ -1,48 +1,113 @@
+
+
+
 header {
-    width: 100%;
-    height: 100lvh;      /* 100 % of the *largest* viewport */
-    min-height: 100svh;  /* but never smaller than the visible viewport */
-    padding-bottom: env(safe-area-inset-bottom); /* keep text above nav bar */
-   
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: "Baskerville", serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-header .top {
-    max-width: 90%; /* Allows the title to wrap */
-    text-align: left;
-}
-
-header .top h1 {
-    font-size: clamp(6rem, 12vw, 11.25rem); /* Keeps it large */
-    line-height: 1.1;
-    margin-top: 100px;
-    padding: 0;
-    word-break: break-word; /* Optional, for long words */
-    text-wrap: balance; /* Optional for smarter wrapping (only in modern browsers) */
+  width: 100%;
+  height: 100lvh;       
+  min-height: 100svh;  
+  padding-bottom: env(safe-area-inset-bottom);  
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  
 }
 
 
 header .bottom {
-    width: 90%;
-    gap: 0.5rem; /* Space between the two links */
-    z-index: 4;
-    text-align: left;
-    
+  margin-bottom: clamp(1rem, 10vh, 15rem);
+  text-align: left;
+  margin-left: clamp(1rem, 5vw, 5rem);
+  bottom: 0;
 }
 
-header .bottom h1 {
-    font-size: clamp(3.5rem, 4vw, 5rem);
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+header .bottom p {
+  font-size: clamp(2rem, min(5vw, 10vh), 3.5rem);
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Source Serif Pro', serif;
+}
+
+
+
+
+@media (max-width: 800px), (max-height: 500px) {
+  .site-title .break-at-mobile,
+  .break-line {
+    display: block;
+  }
+}
+
+
+:root {
+  --title-min: 2rem;       
+  --title-max: 10rem;        
+  --title-vw: 80vw;         
+  --title-vh: 30vh;         
+}
+
+
+
+.site-title {
+  
+  display: inline-block;               
+  max-width: var(--title-vw);          
+  font-size: clamp(
+    var(--title-min),
+    min(var(--title-vw), var(--title-vh)),
+    var(--title-max)
+  );
+  line-height: 1.1;
+  margin-bottom: 0;
+  font-family: 'Bruno Ace', sans-serif;
+
+  position: relative;  
+  overflow: hidden;    
+}
+
+@media (max-width: 900px) {
+  .site-title {
+    max-width: 90vw;
+    font-size: clamp(
+      1.5rem,
+      min(80vw, 20vh),
+      5rem
+    );
+  }
+}
+
+
+.mask {
+  display: inline-block;   
+  overflow: hidden;         
+  vertical-align: bottom;   
+}
+
+.reveal {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.site-title .reveal--first  { animation-delay: 0s; }
+.site-title .reveal--second { animation-delay: 0.3s; }
+
+.site-subtitle .reveal--first  { animation-delay: 1.1s; }
+.site-subtitle .reveal--second { animation-delay: 1.4s; }
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .mask {
+    display: block;
+  }
 }

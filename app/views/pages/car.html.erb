@@ -1,10 +1,14 @@
 
- 
- <div class="space"></div>
-
- 
- 
  <div class="view">
+  <div class="page-nav" style = "max-width: 1400px;" >
+    <div class="website-title" style="font-size: clamp(1.2rem, 2vw, 1.55rem);">
+      <h1><%= link_to "ExoticEuro", root_path, style: "text-decoration: none; color: inherit;" %></h1>
+    </div>
+
+    <div class="page-title" style="">
+      <h1>Car Details</h1>
+    </div>
+  </div>
 
  <div class = "car-card">
     <div class="image-gallery">
@@ -30,7 +34,11 @@
         <p><strong>Description:</strong> <%= @car.description %></p>
   
         <div class="btn">
-          <%= link_to 'Go to Listing', @car.link, class: "link-btn", target: '_blank', rel: 'noopener' %>
+          <% if @car.link.present? %>
+            <%= link_to 'Go to Listing', @car.link, class: "link-btn", target: '_blank', rel: 'noopener' %>
+          <% else %>
+            <%= link_to 'Contact Us', contact_path, class: "link-btn" %>
+          <% end %>
         </div>
 
       </div>
@@ -38,49 +46,6 @@
 </div>
 
 <style>
-    .car-card { 
-        width: 90%;
-        max-width: 1200px;
-        height: 80%;
-        background-color: #E1E2E1;
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        padding: 20px;
-        border-radius: 24px;
-    }
-@media (max-width: 768px){
-.view{
-    height: auto;
-
-}
-  .car-card{
-    flex-direction:column;
-    height:auto;
-    width: 80%;
-    padding: 0;
-    margin: 20px;
-  }
-
-  .thumbnail {
-    /* override the fixed px width with a calc for 2 per row */
-    flex: 0 0 calc(50% - 10px); 
-    width: calc(50% - 10px);
-    /* height can stay your 80px, or switch to auto/aspect-ratio if you like */
-    height: 80px;
-  }
-  .image-gallery{
-    flex:0 0 100%;
-    max-width:100%;
-    height: auto;
-  }
-  .car-info-card{
-    margin-top:20px;
-    width: 90%;
-    min-height: 400px;
-  }
-}
-
 
 </style>
 <script>

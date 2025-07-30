@@ -1,53 +1,60 @@
-<div class = "space"></div>
+  <div class = "page-nav" style = "color: white;">
+    <div class = "website-title">
+      <h1><%= link_to "ExoticEuro", root_path, style: "text-decoration: none; color: inherit; font-size: 3rem;" %></h1>
+    </div>
+
+    <div class = "page-title">
+      <h1> Car Info </h1>
+    </div>
+  </div>
 
 <% if @car.present?%>
-    <h1> Car Details</h1>
-    <a> <%= button_to "Back to Dashboard", dashboard_path, method: :get %></a>
+    <a> <%= button_to "Back to Dashboard", dashboard_path, method: :get, class: "book-btn" %></a>
     <a> <%= button_to "Delete Car", delete_car_path(car_id: @car.id), method: :delete, class: "delete-btn" %></a>
 
     <div class = "form-card">
    <%= form_with( url: update_car_path(car_id: @car.id), local: true, method: :patch) do |form| %>
-        <div>
+        <div class='form-column'>
             <%= form.label :car_make, "Make" %>
             <%= form.text_field :car_make, value: @car.car_make %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :car_model, "Model" %>
             <%= form.text_field :car_model, value: @car.car_model %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :price %>
             <%= form.number_field :price, step: 0.01, value: @car.price %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :year, "Year of Manufacture" %>
             <%= form.number_field :year, step: 1, value: @car.year %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :compared_price, "Market Price" %>
             <%= form.number_field :compared_price, step: 0.01, value: @car.compared_price %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :miles, "Mileage" %>
             <%= form.number_field :miles, value: @car.miles %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :description %>
             <%= form.text_area :description, value: @car.description %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.label :link, "External Link" %>
             <%= form.text_field :link, value: @car.link %>
         </div>
 
-        <div>
+        <div class='form-column'>
             <%= form.submit "Update Car" %>
         </div>
 

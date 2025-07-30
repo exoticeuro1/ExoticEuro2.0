@@ -1,0 +1,13 @@
+<script type="application/ld+json">
+
+
+<%= {
+  "@context": "https://schema.org",
+  "@type":    "LocalBusiness",
+  name:       "Exotic Euro",
+  address:    @user.location,      # your free-form address string
+  hasMap:     @user.location_link, # your Google Maps URL
+  telephone:  @user.phone,      # your phone number
+  url:        root_url
+}.to_json.html_safe %>
+</script>

@@ -4,72 +4,99 @@
 <div class="page">
     <%#-------------------------------------------- Header section --------------------------------------------%>
     <header style="background-image: url('<%= Image.find(1).url %>');">
-        <div class="top">
-            
-        </div>
+        <div class="top"> </div>
         <div class="bottom">
-            <h1>Luxury Made Affordable.<br>
-            Just for You.</h1>
+            <h1 class="site-title">
+                <span class="mask"><span class="reveal reveal--first">Exotic</span></span><span class="mask"><span class="reveal reveal--second">Euro</span></span>
+            </h1>
+
+            <p class="site-subtitle">
+                <span class="mask"><span class="reveal reveal--first">Luxury Made Affordable.</span></span>
+                <span class="mask"><span class="reveal reveal--second">Just for You.</span></span>
+            </p>
         </div>
+
     </header>
+
     <%#--------------------------------------------------------------------------------------------------------%>
 
 
     <%#-------------------------------------------- Steps section ---------------------------------------------%>
 
-    <div class = "step-by-step">
+    <section class = "step-by-step">
         <div class = "section-header">
             <h1>Step by Step Process</h1>
             <a>We make luxury affordable: from search to repair, we handle everything for you.</a>
         </div>
-        <div class = "step">
-            <div class = "step-text">
-                <p>We discuss the the model of your car, and the initial budget.</p>
-            </div>
+        
+        
+    <div class="step">
+      <div class = "step-icon-mobile">
+        <%= image_tag("consultation-icon.svg", alt: "Step 1 Icon") %>
+        <h2 class="step-title-mobile">Consultation & Sourcing</h2>
+      </div>
+      <div class = "content">
+        <h2 class="step-title">Consultation & Sourcing</h2>
+        <p class="step-text">We discuss your desired car model and budget, then locate the perfect vehicle to match your needs.</p>
+      </div>
+    </div>
+
+
+
+    
+    <div class = "step">
+    
+      <div class = "step-icon-mobile">
+        <div class = "step-icon">
+            <%= image_tag("repair-icon.svg", alt: "Step 1 Icon", class: "responsive-icon") %>
         </div>
-        <div class = "step">
-            <div class = "step-text">
-                <p>Our Specialists would find and inspect the requested car to determine the cost of repairs. </p>
-            </div>
-        </div>
-        <div class = "step">
-            <div class = "step-text">
-                <p>Our Mechanics would repair the car to factory specs. </p>
-            </div>
-        </div>
-        <div class = "step">
-            <div class = "step-text">
-                <p>Our Team delivers your dream car for the agreed budget. </p>
-            </div>
-        </div>
+        <h2 class="step-title-mobile">Inspection & Repair</h2>
+      </div>
+
+      <div class = "content">
+        <h2 class = "step-title">Inspection & Repair </h2>
+        <p class = "step-text"> Our Specialists would find and inspect the requested car to determine the cost of repairs and our Mechanics restore it to factory specs. </p>
+      </div>
+    </div>
+
+    
+    <div class = "step">
+      <div class = "step-icon-mobile">
+        <%= image_tag("deliver-icon.svg", alt: "Step 1 Icon" ) %>
+        
+        <h2 class="step-title-mobile">Delivery</h2>
+      </div>
+      <div class = "content">
+        <h2 class = "step-title">Delivery </h2>
+        <p class = "step-text">We Deliver your dream car - fully repaired and within the agreed budget. </p>
+      </div>  
+    </div>
         <%= link_to "Book Consoltation",contact_path, class: "book-btn"  %>
             
       
-    </div>
+    </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>
+    
+    <section class = "about">  
+        <div class = "about-gradient" style =  "background: linear-gradient(180deg, #0166B1 0%, #2756A2 28.37%, #214989 51.92%, #1E427C 68.27%, #1B3B6F 86.06%);"></div>
+        <div class = "our-story">
+            <div class = "story-content">
+                <h1>Our Story</h1>
+                <%= sanitize @user.about, tags: %w(p br strong em ul ol li) %>  
+            </div>    
+        </div>        
+        <div class = "about-gradient"></div>
+    </section>
 
 
-    <%#-------------------------------------------- Contact section ---------------------------------------------%>
-    <div class = "contact-section">
-        <div class = "section-header">
-            <h1> Where to Find Us</h1>
-            <a>Stop by, give us a call, or send a message — we're here to help.</a>
-        </div>
-
-        <% if @user.location.present? %>
-            <%= render partial: 'index/contact/contact_card_with_location', locals: { location: @user.location } %>
-        <% else %>
-           <%=  render partial: 'index/contact/contact_card', locals: { location: @user.location }%>
-        <% end %>
-    </div>
 
     <%#--------------------------------------------------------------------------------------------------------%>
 
 
 
     <%#--------------------------------------------- Credibility Section -------------------------------------%>
-        <div class = "credibility-section">
+        <section class = "credibility-section">
             <div class = "section-header">
                 <h1> What our clients say</h1>
                 <a> We are proud of our work and our clients.</a>
@@ -112,15 +139,15 @@
                     <div class="car-fix car5-mirror" style = "background-image: url('<%= Image.find_by(name: "after_car_five").url %>'); "></div>
                 </div>
             </div>
-        </div>
+        </section>
 
     <%#--------------------------------------------------------------------------------------------------------%>
 
     <%#-------------------------------------------- Featured section ---------------------------------------------%>
-    <div class = "car-section">
+    <section class = "car-section">
             <div class = "section-header" > 
                 <h1> Ready-to-Go Deals </h1>
-                <a> Check out our collection of existing ehicles.</a>
+                <a> Check out our collection of existing vehicles.</a>
             </div>
 
             <% if @cars.present?%>
@@ -151,29 +178,76 @@
                 </div>
             <% else %>
                 <div class = "no-cars">
+                
                     <p> We're fresh out of vehicles right now! </p>
-                    <p> Check back soon — new deals are always on the way. </p>    
+
+                    <p class = "notify-form-label" > Check on us later when New Cars Arrive. </p>
+                  
                 </div>
             <% end %>
 
-    </div>
+    </section>
 
         <%#--------------------------------------------------------------------------------------------------------%>
+     <%#-------------------------------------------- Contact section ---------------------------------------------%>
+    <section class = "contact-section">
+        <div class = "section-header">
+            <h1> Upgrade Your Ride Today</h1>
+            <a>Simply fill out our quick online booking form below and we’ll take care of the rest. </a>
+        </div>
+
+        <% if @user.location.present? %>
+            <%= render partial: 'index/contact/contact_card_with_location', locals: { location: @user.location } %>
+        <% else %>
+           <%=  render partial: 'index/contact/contact_card', locals: { location: @user.location }%>
+        <% end %>
+        <%= link_to "Book Consultation", contact_path, class: "book-btn", style: "margin-top: 3rem;"%>
+
+    </section>
+
+    <%#--------------------------------------------------------------------------------------------------------%>
+
+
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const testimonials = document.querySelectorAll(".testimony-outer");
-    if (testimonials.length === 0) return; // Prevent error if selector is wrong
 
-    let index = 0;
 
-    setInterval(() => {
-      testimonials[index].classList.remove("active");
-      index = (index + 1) % testimonials.length;
-      testimonials[index].classList.add("active");
-    }, 5000);
-  });
-</script>
+
+<style>
+.testimony-outer {
+  position: absolute;
+  width: 100%; height: 100%;
+  opacity: 0;
+  
+  /* 1) Make the whole cycle 20s (4 × 5s), repeat forever */
+  /* 2) Apply ease-in-out to the animation */
+  animation: fade 20s infinite ease-in-out;
+}
+
+/* stagger each testimonial by 5s */
+.testimony-outer:nth-child(1) { animation-delay: 0s;  }
+.testimony-outer:nth-child(2) { animation-delay: 5s;  }
+.testimony-outer:nth-child(3) { animation-delay: 10s; }
+.testimony-outer:nth-child(4) { animation-delay: 15s; }
+
+/* Keyframes: 
+   – 0%→20% = showing (with fade-in at 0→4%, hold until 20%)  
+   – 20%→25% = fade-out  
+   – 25%→100% = hidden until next cycle
+*/
+@keyframes fade {
+  /* start fully transparent */
+  0%   { opacity: 0; }
+  /* fade in to full opacity over 4% of the cycle (0.8s) */
+  4%   { opacity: 1; }
+  /* stay fully visible until 20% of the cycle (4s) */
+  20%  { opacity: 1; }
+  /* fade out over the next 5% (1s) */
+  25%  { opacity: 0; }
+  /* remain hidden until the very end of the cycle */
+  100% { opacity: 0; }
+}
+
+</style>
 
 
