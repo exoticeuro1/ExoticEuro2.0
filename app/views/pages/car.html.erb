@@ -1,10 +1,14 @@
 
- 
- <div class="space"></div>
-
- 
- 
  <div class="view">
+  <div class="page-nav" style = "max-width: 1400px;" >
+    <div class="website-title" style="font-size: clamp(1.2rem, 2vw, 1.55rem);">
+      <h1><%= link_to "ExoticEuro", root_path, style: "text-decoration: none; color: inherit;" %></h1>
+    </div>
+
+    <div class="page-title" style="">
+      <h1>Car Details</h1>
+    </div>
+  </div>
 
  <div class = "car-card">
     <div class="image-gallery">
@@ -30,7 +34,11 @@
         <p><strong>Description:</strong> <%= @car.description %></p>
   
         <div class="btn">
-          <%= link_to 'Go to Listing', @car.link, class: "link-btn", target: '_blank', rel: 'noopener' %>
+          <% if @car.link.present? %>
+            <%= link_to 'Go to Listing', @car.link, class: "link-btn", target: '_blank', rel: 'noopener' %>
+          <% else %>
+            <%= link_to 'Contact Us', contact_path, class: "link-btn" %>
+          <% end %>
         </div>
 
       </div>
