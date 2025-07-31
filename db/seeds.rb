@@ -10,8 +10,8 @@
 
 
 @admin = User.create!(
-  email: "exoticeuro1@gmail.com",
-  password: "password",
+  email:  ENV["USER_EMAIL"],
+  password: ENV["USER_PASSWORD"],
   
   display_email: "discdealz901@gmail.com",
   contact_email: "exoticeuro1@gmail.com",
@@ -34,66 +34,66 @@ puts "Admin user created"
 
 herobanner_image = Image.create!(
   name: "landing_car",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car-landing.jpg",
-)
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car-landing.jpg",
+  )
 puts "Hero Banner Image Created"  
 
 no_image = Image.create!(
   name: "no_image",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/no_image.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/no_image.jpg",
 )
 puts "No Image Created"
 
 location_image = Image.create!(
   name: "location_image",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/location.png",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/location.png",
 )
 puts "Location Image Created"
 
 before_car_one = Image.create!(
   name: "before_car_one",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_damaged.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car1-damaged.jpg",
 )
 
 before_car_two = Image.create!(
   name: "before_car_two",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car2_damaged.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car2-damaged.jpg",
 )
 
 before_car_three = Image.create!(
   name: "before_car_three",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car3_damaged.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car3-damaged.jpg",
 )
 
 before_car_four = Image.create!(
   name: "before_car_four",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car4_damaged.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car4-damaged.jpg",
 )
 
 before_car_five = Image.create!(
   name: "before_car_five",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_damaged.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car5-damaged.jpg",
 )
 puts "Before Images Created"
 
 after_car_one = Image.create!(
   name: "after_car_one",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car1_fixed.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car1-fixed.jpg",
 )
 after_car_two = Image.create!(
   name: "after_car_two",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car2_fixed.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car2-fixed.jpg",
 )
 after_car_three = Image.create!(
   name: "after_car_three",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car3_fixed.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car3-fixed.jpg",
 )
 after_car_four = Image.create!(
   name: "after_car_four",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car4_fixed.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car4-fixed.jpg",
 )
 after_car_five = Image.create!(
   name: "after_car_five",
-  url: "https://storage.googleapis.com/exoticeuro_fb_21_4_2025/car5_fixed.jpg",
+  url: "https://storage.googleapis.com/exoticeuro2025-tohoriehomes/car5-fixed.jpg",
 )
 puts "After Images Created"
