@@ -1,9 +1,11 @@
 
- <div class="view">
+<div class="view">
   <div class="page-nav" style = "max-width: 1400px;" >
-    <div class="website-title" style="font-size: clamp(1.2rem, 2vw, 1.55rem);">
-      <h1><%= link_to "ExoticEuro", root_path, style: "text-decoration: none; color: inherit;" %></h1>
-    </div>
+    <%= link_to root_path,
+            class: "website-title",
+            style: "font-size: clamp(1.2rem, 2vw, 1.55rem); color: #e1e2e1; text-decoration: none; display: inline-block; cursor: pointer;" do %>
+      <h1>ExoticEuro</h1>
+    <% end %>
 
     <div class="page-title" style="">
       <h1>Car Details</h1>
