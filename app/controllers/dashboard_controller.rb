@@ -82,6 +82,12 @@ class DashboardController < ApplicationController
     def create_image
         @car = Car.find(params[:car_id])
         uploaded_file = params[:image]
+
+        unless uploaded_file.present?
+            flash[:alert] = "No file selected for upload."
+            redirect_to edit_car_path(car_id: @car.id) and return
+        end
+        
         if create_new_image(uploaded_file, @car.id)
             flash[:notice] = "Image uploaded successfully."
             redirect_to edit_car_path(car_id: @car.id)

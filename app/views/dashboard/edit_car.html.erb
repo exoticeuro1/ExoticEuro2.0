@@ -64,7 +64,7 @@
     <%= form_with(url: create_image_path(car_id: @car.id), local: true,multipart: true) do |form| %>
         <div>
             <%= form.label :image, "Upload Car Images" %>
-            <%= file_field_tag "image", accept: "image/*" %>
+            <%= file_field_tag "image", accept: "image/*", required: true  %>
         </div>
 
         <div>
